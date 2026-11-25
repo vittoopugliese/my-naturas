@@ -17,21 +17,21 @@ No tiene backend, login ni base de datos: es un sitio estático.
 |---|---|
 | **Estante** (home) | Los 12 frascos en fila sobre una repisa de madera, en el orden de la foto (`bottle.shelfOrder`). Hover = el frasco se levanta un poco y muestra un tooltip con el nombre. Órbita de cámara limitada. |
 | **Detalle** | Click en un frasco: la cámara hace zoom, el frasco queda solo y rota lento (drag para girarlo). Panel lateral con nombre, línea, concentración, año, perfumistas, familia y una pirámide de notas (salida / corazón / fondo). |
-| **Filtros** | Chips por línea (Homem / Essencial / Kaiak / Humor / Ekos) y por familia (amaderada, especiada, cítrica, marina, aromática). Los frascos que no coinciden se atenúan pero no se quitan, para que el estante mantenga su forma. |
-| **Catálogo** | Segundo modo, que se elige arriba con "Mi estante / Catálogo". Muestra todas las líneas masculinas de Natura (89 perfumes de hombre o unisex en 11 líneas), con una estantería por línea apilada en vertical y los frascos ordenados por año. Mis frascos aparecen con su modelo exacto y una ★ en el borde del estante. ↑ ↓ o la lista lateral cambian de estante. Los filtros por familia también funcionan acá. |
+| **Filtros** | Botón "Filtros" que muestra u oculta el panel. Grupos: estación (verano, otoño, invierno, primavera), ocasión (día a día, cena casual, cena formal, boliche), familia y línea. Los grupos se suman: un perfume tiene que cumplir cada grupo activo, y dentro de un grupo alcanza con una opción. Estación y ocasión se estiman con la familia, las notas y la concentración (`data.ts`); un perfume puede fijarlas con `seasons` y `occasions` en sus datos. Los frascos que no coinciden se atenúan pero no se quitan, y abajo aparece la lista de resultados para abrirlos. Los filtros son los mismos en los dos modos. |
+| **Catálogo** | Segundo modo, que se elige arriba con "Mi estante / Catálogo". Muestra todas las líneas masculinas de Natura (89 perfumes de hombre o unisex en 11 líneas), con una estantería por línea apilada en vertical y los frascos ordenados por año. Mis frascos aparecen con su modelo exacto y una ★ en el borde del estante. ↑ ↓ o la lista lateral cambian de estante. Los filtros buscan en todas las estanterías: la lista lateral muestra cuántos coinciden en cada una, y los resultados abren el frasco en su estante. |
 
 **Carga:** hay un solo modo montado a la vez. Al cambiar de modo se desmonta el otro canvas y se libera su memoria de GPU. El catálogo (`src/modes/Catalog.tsx` y `data/catalogo.json`) es un chunk aparte que se baja solo al abrirlo. Dentro del catálogo solo se montan el estante en foco y sus dos vecinos (`MOUNT_RADIUS`).
 
-**Datos del catálogo:** `data/catalogo.json` lo genera `scripts/catalogo/` a partir de thescentbase.com (468 perfumes de Natura; se filtran los de hombre y los unisex). Trae año, género, familia, notas (traducidas con `notes-es.js`) y perfumistas. No trae concentración. Excluye mis perfumes, que la app agrega desde `data/perfumes.json`. Los frascos son aproximados (`bottle.estimated`): el modelo sale de la línea (ver sección 3; las líneas sin modelo propio usan el genérico, proporcionado según la foto) y el color se toma de la foto del producto. Para regenerarlo:
+**Datos del catálogo:** `data/catalogo.json` lo genera `scripts/catalogo/` a partir de thescentbase.com (468 perfumes de Natura; se filtran los de hombre y los unisex). Trae año, género, familia, notas (traducidas con `notes-es.cjs`) y perfumistas. No trae concentración. Excluye mis perfumes, que la app agrega desde `data/perfumes.json`. Los frascos son aproximados (`bottle.estimated`): el modelo sale de la línea (ver sección 3; las líneas sin modelo propio usan el genérico, proporcionado según la foto) y el color se toma de la foto del producto. Para regenerarlo:
 
 ```sh
 cd scripts/catalogo && npm i --no-save jpeg-js@0.4.4
-node scrape.js slugs.txt <carpeta-temporal>          # baja páginas y fotos
-node colors.js <carpeta-temporal>/img <carpeta-temporal>/colors.json
-node build-catalog.js <carpeta-temporal>/scraped.json <carpeta-temporal>/colors.json ../../data/perfumes.json ../../data/catalogo.json
+node scrape.cjs slugs.txt <carpeta-temporal>          # baja páginas y fotos
+node colors.cjs <carpeta-temporal>/img <carpeta-temporal>/colors.json
+node build-catalog.cjs <carpeta-temporal>/scraped.json <carpeta-temporal>/colors.json ../../data/perfumes.json ../../data/catalogo.json
 ```
 
-`scrape.js` espera que existan las subcarpetas `pages/` e `img/` dentro de la carpeta temporal.
+`scrape.cjs` espera que existan las subcarpetas `pages/` e `img/` dentro de la carpeta temporal.
 
 No están en el catálogo porque thescentbase solo tiene la versión femenina: Kaiak clásico, Biografia y Essencial Elixir. Homem Identidad, Homem Potence y Ekos Copaíba sí están, porque son míos.
 
@@ -57,7 +57,7 @@ Formas (`src/three/shapes/`, una por archivo; 1 unidad = 10 cm). **El modelo sal
 | Ekos | `ekos.tsx` | Redondo, collar de vidrio y válvula estriada. |
 | Otras (catálogo) | `generic.tsx` | Bloque con tapa cilíndrica, proporcionado por `bottle.aspect`. |
 
-**Rendimiento.** Cada archivo crea su geometría una sola vez, a nivel de módulo (`once` y `memoBy` en `shapes/common.ts`), y todos los frascos de la línea la comparten. Las texturas de moleteado y de gradiente también se guardan en caché (`textures.ts`). Los grupos llevan `dispose={null}` para que R3F no libere la geometría compartida al desmontar un frasco. `BottleShapeView` es `memo`: el hover y la selección no vuelven a armar el modelo. Kaiak y Biografia usan `loft()`, un cuerpo hecho con cortes horizontales de rectángulo redondeado, con UV vertical para los gradientes.
+**Rendimiento.** Cada archivo crea su geometría una sola vez, a nivel de módulo (`once` y `memoBy` en `shapes/common.ts`), y todos los frascos de la línea la comparten. Las texturas de moleteado y de gradiente también se guardan en caché (`textures.ts`). R3F solo libera lo que crea en JSX (materiales, textos), no la geometría que recibe como prop, así que al cambiar de estante se liberan los materiales y la geometría compartida queda. El canvas dibuja bajo demanda (`frameloop="demand"`): solo pide cuadros mientras la cámara o un frasco se mueven, y queda quieto cuando el estante está quieto. `BottleShapeView` es `memo`: el hover y la selección no vuelven a armar el modelo. Kaiak y Biografia usan `loft()`, un cuerpo hecho con cortes horizontales de rectángulo redondeado, con UV vertical para los gradientes.
 
 Estante (`src/three/layout.ts`): cada frasco gira según `bottle.yaw` (grados; positivo muestra el costado derecho) y se apoya contra el fondo. Después se corre a la derecha solo hasta no chocar con sus vecinos (test de ejes separadores entre rectángulos rotados). Así los frascos girados quedan metidos uno detrás del otro, apilados como en el estante real.
 

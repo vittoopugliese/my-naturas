@@ -2,10 +2,14 @@
 // already in the owner's collection (data/perfumes.json), with Spanish notes and an estimated bottle.
 const fs = require('fs')
 const [, , scrapedFile, colorsFile, collectionFile, outFile] = process.argv
+if (!outFile) {
+  console.error('Uso: node build-catalog.cjs <scraped.json> <colors.json> <perfumes.json> <catalogo.json>')
+  process.exit(1)
+}
 const scraped = JSON.parse(fs.readFileSync(scrapedFile, 'utf8'))
 const colors = JSON.parse(fs.readFileSync(colorsFile, 'utf8'))
 const collection = JSON.parse(fs.readFileSync(collectionFile, 'utf8'))
-const NOTES = require('./notes-es.js')
+const NOTES = require('./notes-es.cjs')
 
 // thescentbase slug -> id in data/perfumes.json
 const OWNED = {

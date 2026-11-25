@@ -37,7 +37,7 @@ function Ekos({ p, title, subtitle }: ShapeProps) {
   const x0 = -R * 0.6
   const stacked = title.includes('\n')
   return (
-    <group dispose={null}>
+    <group>
       <mesh geometry={g.body}>
         <Glass color={glass} tint="#6b3f17" />
       </mesh>

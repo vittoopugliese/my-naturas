@@ -1,7 +1,8 @@
 import { Suspense, useEffect, useMemo, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
 import catalogRaw from '../../data/catalogo.json'
-import { matcher, ownedIds, perfumes as mine, type FamilyTag } from '../data'
+import type { FilterProps } from '../App'
+import { filterCount, matcher, ownedIds, perfumes as mine } from '../data'
 import { CameraRig, FOV, type Focus } from '../three/CameraRig'
 import { packShelf, type ShelfLayout } from '../three/layout'
 import { sizeOf } from '../three/shapes'
@@ -9,9 +10,9 @@ import { SHELF_MARGIN, ShelfRow } from '../three/ShelfRow'
 import { Stage } from '../three/Stage'
 import type { Perfume } from '../types'
 import { DetailPanel } from '../ui/DetailPanel'
-import { Filters } from '../ui/Filters'
+import { FilterPanel, Filters, FilterToggle } from '../ui/Filters'
 import { useCompact, useSwipe } from '../useMobile'
-import { toggle, useSelection } from '../useSelection'
+import { useSelection } from '../useSelection'
 
 /** Men's lines, in the order the shelves are stacked (top to bottom). */
 const LINE_ORDER = ['Homem', 'Essencial', 'Kaiak', 'Biografia', 'Sr. N', 'Humor', 'Ekos', 'Sintonia', 'Urbano', 'Horus', 'Hoje']
@@ -38,15 +39,18 @@ function buildShelves(): Shelf[] {
 }
 
 /** Every Natura men's line, one shelf per line, ordered by year. Loaded on demand. */
-export default function Catalog() {
+export default function Catalog({ filters, setFilters, filtersOpen, setFiltersOpen }: FilterProps) {
   const shelves = useMemo(buildShelves, [])
   const compact = useCompact()
   const [current, setCurrent] = useState(0)
   const shelf = shelves[current]
   const { selectedId, setSelectedId, hoveredId, setHoveredId, step } = useSelection(shelf.perfumes)
-  const [activeFamilies, setActiveFamilies] = useState<Set<FamilyTag>>(new Set())
-  const matches = useMemo(() => matcher(new Set(), activeFamilies), [activeFamilies])
+  const matches = useMemo(() => matcher(filters), [filters])
+  const nFilters = filterCount(filters)
   const total = shelves.reduce((n, s) => n + s.perfumes.length, 0)
+  // Matches across every shelf, so a filter also finds perfumes on shelves not in view.
+  const results = useMemo(() => shelves.flatMap((s) => s.perfumes.filter(matches)), [shelves, matches])
+  const lineNames = useMemo(() => shelves.map((s) => s.line), [shelves])
 
   const goTo = (i: number) => {
     setSelectedId(null)
@@ -80,7 +84,8 @@ export default function Catalog() {
     <>
       <div className="absolute inset-0 touch-none" {...swipe}>
       <Canvas
-        dpr={[1, 2]}
+        dpr={[1, compact ? 1.5 : 2]}
+        frameloop="demand"
         camera={{ position: [0, 1.6, 14], fov: FOV, near: 0.1, far: 100 }}
         onPointerMissed={() => setSelectedId(null)}
       >
@@ -117,18 +122,25 @@ export default function Catalog() {
             <nav className="pointer-events-auto -mx-5 mt-4 flex gap-1 overflow-x-auto px-5 [scrollbar-width:none] md:mx-0 md:w-44 md:px-0 md:flex-col md:overflow-visible">
               {shelves.map((s, i) => {
                 const mineHere = s.perfumes.filter((p) => ownedIds.has(p.id)).length
+                const hits = nFilters ? s.perfumes.filter(matches).length : null
                 return (
                   <button
                     key={s.line}
                     onClick={() => goTo(i)}
                     className={`flex shrink-0 items-baseline justify-between gap-3 rounded-full px-3 py-2 text-left font-mono md:rounded md:px-2 md:py-1 text-xs transition ${
                       i === current ? 'bg-amber-200 text-black' : 'text-white/60 hover:bg-white/10'
-                    }`}
+                    } ${hits === 0 && i !== current ? 'opacity-35' : ''}`}
                   >
                     <span>{s.line}</span>
                     <span className="opacity-60">
-                      {mineHere > 0 && `★${mineHere} `}
-                      {s.perfumes.length}
+                      {hits !== null ? (
+                        `${hits} de ${s.perfumes.length}`
+                      ) : (
+                        <>
+                          {mineHere > 0 && `★${mineHere} `}
+                          {s.perfumes.length}
+                        </>
+                      )}
                     </span>
                   </button>
                 )
@@ -137,16 +149,30 @@ export default function Catalog() {
           )}
         </div>
         {!selected && (
-          <div className="flex flex-col gap-2">
-            <p className="font-mono text-[11px] text-white/40 md:hidden">Deslizá para recorrer el estante · tocá un frasco</p>
-            <p className="hidden font-mono text-[11px] text-white/40 md:block">
-              ↑ ↓ cambian de estante · click derecho y arrastrar recorre los estantes largos
-            </p>
-            <Filters
-              activeFamilies={activeFamilies}
-              onToggleFamily={(f) => setActiveFamilies((s) => toggle(s, f))}
-              onClear={() => setActiveFamilies(new Set())}
-            />
+          <div className="flex flex-col items-start gap-3">
+            {filtersOpen ? (
+              <FilterPanel>
+                <Filters
+                  value={filters}
+                  onChange={setFilters}
+                  lines={lineNames}
+                  results={results}
+                  owned={ownedIds}
+                  onPick={(p) => {
+                    if (compact) setFiltersOpen(false)
+                    select(p.id)
+                  }}
+                />
+              </FilterPanel>
+            ) : (
+              <>
+                <p className="font-mono text-[11px] text-white/40 md:hidden">Deslizá para recorrer el estante · tocá un frasco</p>
+                <p className="hidden font-mono text-[11px] text-white/40 md:block">
+                  ↑ ↓ cambian de estante · click derecho y arrastrar recorre los estantes largos
+                </p>
+              </>
+            )}
+            <FilterToggle open={filtersOpen} count={nFilters} onClick={() => setFiltersOpen(!filtersOpen)} />
           </div>
         )}
       </div>

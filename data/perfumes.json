@@ -45,6 +45,16 @@
         "label": "#d4d4d6",
         "shelfOrder": 1
       },
+      "seasons": [
+        "primavera",
+        "otoño",
+        "invierno"
+      ],
+      "occasions": [
+        "cena",
+        "formal",
+        "boliche"
+      ],
       "source": "https://thescentbase.com/perfumes/natura/essencial-exclusivo",
       "verified": true
     },
@@ -609,6 +619,15 @@
         "shelfOrder": 16,
         "estimated": true
       },
+      "seasons": [
+        "primavera",
+        "otoño",
+        "invierno"
+      ],
+      "occasions": [
+        "cena",
+        "boliche"
+      ],
       "source": "https://thescentbase.com/perfumes/natura/kaiak-noite",
       "verified": false
     },
@@ -791,6 +810,15 @@
         "shelfOrder": 22,
         "estimated": true
       },
+      "seasons": [
+        "primavera",
+        "otoño",
+        "invierno"
+      ],
+      "occasions": [
+        "cena",
+        "formal"
+      ],
       "source": "https://thescentbase.com/perfumes/natura/biografia-assinatura",
       "verified": false
     },
@@ -816,6 +844,14 @@
         "shelfOrder": 7,
         "estimated": true
       },
+      "seasons": [
+        "otoño",
+        "invierno"
+      ],
+      "occasions": [
+        "formal",
+        "boliche"
+      ],
       "source": "",
       "verified": false
     },
@@ -852,6 +888,16 @@
         "shelfOrder": 19,
         "estimated": true
       },
+      "seasons": [
+        "verano",
+        "primavera",
+        "otoño"
+      ],
+      "occasions": [
+        "dia",
+        "cena",
+        "boliche"
+      ],
       "source": "https://diariodopara.com.br/noticias/natura-lanca-kaiak-21k-com-fresh-amplify-tecnologia-inedita-na-perfumaria/",
       "verified": false
     },
@@ -878,6 +924,15 @@
         "shelfOrder": 20,
         "estimated": true
       },
+      "seasons": [
+        "verano",
+        "primavera",
+        "otoño"
+      ],
+      "occasions": [
+        "cena",
+        "boliche"
+      ],
       "source": "",
       "verified": false
     },
@@ -939,6 +994,15 @@
         "shelfOrder": 4,
         "estimated": true
       },
+      "seasons": [
+        "primavera",
+        "otoño",
+        "invierno"
+      ],
+      "occasions": [
+        "cena",
+        "formal"
+      ],
       "source": "https://scentverdict.com/perfume/natura-essencial-sentir-masculino-eau-de-parfum",
       "verified": false
     },
@@ -994,6 +1058,16 @@
         "shelfOrder": 5,
         "estimated": true
       },
+      "seasons": [
+        "primavera",
+        "otoño",
+        "invierno"
+      ],
+      "occasions": [
+        "cena",
+        "formal",
+        "boliche"
+      ],
       "source": "https://thescentbase.com/perfumes/natura/essencial-atrai",
       "verified": false
     },

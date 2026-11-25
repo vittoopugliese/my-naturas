@@ -20,6 +20,10 @@ export interface Bottle {
   model?: string
 }
 
+export type Season = 'verano' | 'otoño' | 'invierno' | 'primavera'
+/** dia: errands, the supermarket. cena: a casual dinner. formal: a formal dinner. boliche: a night out. */
+export type Occasion = 'dia' | 'cena' | 'formal' | 'boliche'
+
 export interface Perfume {
   id: string
   brand: string
@@ -31,6 +35,10 @@ export interface Perfume {
   family: string
   notes: { top: string[]; heart: string[]; base: string[] }
   bottle: Bottle
+  /** Replaces the estimate from the notes (see `seasonsOf`). */
+  seasons?: Season[]
+  /** Replaces the estimate from the notes (see `occasionsOf`). */
+  occasions?: Occasion[]
   source: string
   verified: boolean
 }

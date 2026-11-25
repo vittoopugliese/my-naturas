@@ -38,7 +38,7 @@ function Generic({ p, title, subtitle }: ShapeProps) {
   const g = geo(String(w))
   const front = depthOf(w) / 2 + 0.003
   return (
-    <group dispose={null}>
+    <group>
       <mesh geometry={g.body} position={[0, BODY_H / 2, 0]}>
         <Glass color={glass} gradientTo={glassGradientTo} finish={finish} />
       </mesh>

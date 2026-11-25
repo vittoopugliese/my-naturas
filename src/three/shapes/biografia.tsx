@@ -46,7 +46,7 @@ function Biografia({ p, title, subtitle }: ShapeProps) {
   const front = D / 2 + 0.003
   const ly = H * 0.55
   return (
-    <group dispose={null}>
+    <group>
       <mesh geometry={g.body}>
         <Glass color={glass} gradientTo={glassGradientTo} finish={finish} />
       </mesh>

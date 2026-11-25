@@ -1,3 +1,4 @@
+import { occasions, occasionsOf, seasons, seasonsOf } from '../data'
 import type { Perfume } from '../types'
 import type { useSwipe } from '../useMobile'
 
@@ -68,6 +69,10 @@ export function DetailPanel({ perfume: p, owned, position, swipe, onClose, onPre
         <dd>{p.concentration || '—'}</dd>
         <dt className="text-white/40">Año</dt>
         <dd>{p.year ?? '—'}</dd>
+        <dt className="text-white/40">Estación</dt>
+        <dd>{seasons.filter((s) => seasonsOf(p).has(s.id)).map((s) => s.label).join(', ')}</dd>
+        <dt className="text-white/40">Ocasión</dt>
+        <dd>{occasions.filter((o) => occasionsOf(p).has(o.id)).map((o) => o.label).join(', ')}</dd>
         {p.perfumers.length > 0 && (
           <>
             <dt className="text-white/40">Perfumista</dt>

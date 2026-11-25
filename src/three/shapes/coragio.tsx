@@ -34,7 +34,7 @@ function Coragio({ p, title, subtitle }: ShapeProps) {
   const ly = PLATE_Y + PLATE_H * 0.55
   const x0 = -W * 0.3
   return (
-    <group dispose={null}>
+    <group>
       <mesh geometry={g.body} position={[0, BODY_H / 2, 0]}>
         <meshPhysicalMaterial
           color={glass}

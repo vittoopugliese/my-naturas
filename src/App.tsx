@@ -1,10 +1,19 @@
 import { lazy, Suspense, useState } from 'react'
+import { emptyFilters, type FilterState } from './data'
 import MyShelf from './modes/MyShelf'
 
 // The catalog (≈90 bottles plus its data) is a separate chunk, fetched only when opened.
 const Catalog = lazy(() => import('./modes/Catalog'))
 
 type Mode = 'mine' | 'catalog'
+
+/** Filters live here, so they stay the same when switching between my shelf and the catalog. */
+export type FilterProps = {
+  filters: FilterState
+  setFilters: (f: FilterState) => void
+  filtersOpen: boolean
+  setFiltersOpen: (open: boolean) => void
+}
 
 const MODES: { id: Mode; label: string }[] = [
   { id: 'mine', label: 'Mi estante' },
@@ -13,14 +22,17 @@ const MODES: { id: Mode; label: string }[] = [
 
 export default function App() {
   const [mode, setMode] = useState<Mode>('mine')
+  const [filters, setFilters] = useState(emptyFilters)
+  const [filtersOpen, setFiltersOpen] = useState(false)
+  const filterProps: FilterProps = { filters, setFilters, filtersOpen, setFiltersOpen }
   return (
     <div className="relative h-full w-full overflow-hidden">
       {/* Only one mode is mounted at a time: switching drops the other canvas and its GPU memory. */}
       {mode === 'mine' ? (
-        <MyShelf />
+        <MyShelf {...filterProps} />
       ) : (
         <Suspense fallback={<p className="absolute inset-0 grid place-items-center font-mono text-xs text-white/50">Cargando catálogo…</p>}>
-          <Catalog />
+          <Catalog {...filterProps} />
         </Suspense>
       )}
 

@@ -1,26 +1,24 @@
 import { Suspense, useEffect, useMemo, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { lines, matcher, perfumes, type FamilyTag } from '../data'
+import type { FilterProps } from '../App'
+import { filterCount, lines, matcher, perfumes } from '../data'
 import { CameraRig, FOV, type Focus } from '../three/CameraRig'
 import { packShelf } from '../three/layout'
 import { sizeOf } from '../three/shapes'
 import { SHELF_MARGIN, ShelfRow } from '../three/ShelfRow'
 import { Stage } from '../three/Stage'
 import { DetailPanel } from '../ui/DetailPanel'
-import { Filters } from '../ui/Filters'
+import { FilterPanel, Filters, FilterToggle } from '../ui/Filters'
 import { LineBar, type LineSpan } from '../ui/LineBar'
 import { useCompact, useSwipe } from '../useMobile'
-import { toggle, useSelection } from '../useSelection'
+import { useSelection } from '../useSelection'
 
 /** My real shelf, grouped by line. */
-export default function MyShelf() {
+export default function MyShelf({ filters, setFilters, filtersOpen, setFiltersOpen }: FilterProps) {
   const compact = useCompact()
   const { selectedId, setSelectedId, hoveredId, setHoveredId, step } = useSelection(perfumes)
-  const [activeLines, setActiveLines] = useState<Set<string>>(new Set())
-  const [activeFamilies, setActiveFamilies] = useState<Set<FamilyTag>>(new Set())
-  const [showFilters, setShowFilters] = useState(false)
   const [moved, setMoved] = useState(false)
-  const matches = useMemo(() => matcher(activeLines, activeFamilies), [activeLines, activeFamilies])
+  const matches = useMemo(() => matcher(filters), [filters])
   const layout = useMemo(() => packShelf(perfumes), [])
 
   // Center of each line on the shelf, for the phone tab bar.
@@ -50,30 +48,34 @@ export default function MyShelf() {
   const focus: Focus = selected
     ? { kind: 'bottle', x: layout.byId[selected.id].x, y: 0, h: sizeOf(selected).h }
     : { kind: 'shelf', y: 0, width: layout.total + SHELF_MARGIN, ...pan }
-  const visible = perfumes.filter(matches).length
-  const filterCount = activeLines.size + activeFamilies.size
+  const results = useMemo(() => perfumes.filter(matches), [matches])
+  const visible = results.length
+  const nFilters = filterCount(filters)
   const swipe = useSwipe(step, compact && selected !== null)
   const index = selected ? perfumes.indexOf(selected) : -1
 
-  const filters = (
-    <Filters
-      lines={lines}
-      activeLines={activeLines}
-      activeFamilies={activeFamilies}
-      onToggleLine={(l) => setActiveLines((s) => toggle(s, l))}
-      onToggleFamily={(f) => setActiveFamilies((s) => toggle(s, f))}
-      onClear={() => {
-        setActiveLines(new Set())
-        setActiveFamilies(new Set())
-      }}
-    />
+  const panel = filtersOpen && (
+    <FilterPanel>
+      <Filters
+        value={filters}
+        onChange={setFilters}
+        lines={lines}
+        results={results}
+        onPick={(p) => {
+          if (compact) setFiltersOpen(false)
+          setSelectedId(p.id)
+        }}
+      />
+    </FilterPanel>
   )
+  const toggleButton = <FilterToggle open={filtersOpen} count={nFilters} onClick={() => setFiltersOpen(!filtersOpen)} />
 
   return (
     <>
       <div className="absolute inset-0 touch-none" {...swipe}>
         <Canvas
-          dpr={[1, 2]}
+          dpr={[1, compact ? 1.5 : 2]}
+        frameloop="demand"
           camera={{ position: [0, 1.6, 14], fov: FOV, near: 0.1, far: 100 }}
           onPointerMissed={() => setSelectedId(null)}
         >
@@ -100,12 +102,12 @@ export default function MyShelf() {
         {!selected &&
           (compact ? (
             <div className="flex flex-col gap-3">
-              {!moved && (
+              {!moved && !filtersOpen && (
                 <p className="self-center rounded-full bg-black/50 px-3 py-1 font-mono text-[11px] text-white/60 backdrop-blur">
                   Deslizá para recorrer · tocá un frasco
                 </p>
               )}
-              {showFilters && <div className="rounded-2xl border border-white/10 bg-[#17110d]/90 p-3 backdrop-blur-md">{filters}</div>}
+              {panel}
               <div className="flex items-center gap-2">
                 <div className="min-w-0 flex-1">
                   <LineBar
@@ -114,19 +116,14 @@ export default function MyShelf() {
                     onPick={(s) => setPan((p) => ({ x: s.x, nonce: p.nonce + 1 }))}
                   />
                 </div>
-                <button
-                  onClick={() => setShowFilters((v) => !v)}
-                  aria-pressed={showFilters}
-                  className={`pointer-events-auto mb-1 shrink-0 rounded-full border px-3 py-2 font-mono text-xs ${
-                    showFilters || filterCount ? 'border-amber-200 text-amber-200' : 'border-white/15 bg-black/40 text-white/70'
-                  }`}
-                >
-                  Filtros{filterCount ? ` · ${filterCount}` : ''}
-                </button>
+                <div className="mb-1">{toggleButton}</div>
               </div>
             </div>
           ) : (
-            filters
+            <div className="flex flex-col items-start gap-3">
+              {panel}
+              {toggleButton}
+            </div>
           ))}
       </div>
 

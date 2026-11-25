@@ -37,7 +37,7 @@ function Humor({ p, title, subtitle }: ShapeProps) {
   // Radius of curvature at the front of the flattened ellipse.
   const wrap = (R * R) / (R * FLAT)
   return (
-    <group dispose={null}>
+    <group>
       <mesh geometry={g.body} scale={[1, 1, FLAT]}>
         <Glass color={glass} />
       </mesh>

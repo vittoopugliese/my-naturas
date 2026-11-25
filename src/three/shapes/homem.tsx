@@ -30,7 +30,7 @@ function Homem({ p, title, subtitle }: ShapeProps) {
   const x0 = -0.06
   const ly = H * 0.62
   return (
-    <group dispose={null}>
+    <group>
       <mesh geometry={g.body} position={[0, H / 2, 0]}>
         <Glass color={glass} gradientTo={glassGradientTo} finish={finish} />
       </mesh>
