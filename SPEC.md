@@ -1,4 +1,4 @@
-# Colección de Perfumes: spec inicial
+# NATTORIO: spec inicial
 
 Frontend personal para mostrar mi colección de perfumes con modelos 3D.
 v1 = solo los 12 Natura. El schema está pensado para sumar otras marcas después.

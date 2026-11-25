@@ -24,8 +24,9 @@ export default function App() {
         </Suspense>
       )}
 
-      <header className="pointer-events-none absolute top-0 left-0 p-5 md:p-8">
-        <h1 className="font-serif text-3xl font-semibold text-amber-50 md:text-4xl">
+      <header className="pointer-events-none absolute top-0 left-0 p-5 pt-[max(1.25rem,env(safe-area-inset-top))] md:p-8">
+        <p className="font-mono text-xs tracking-[0.3em] text-amber-200/70">NATTORIO</p>
+        <h1 className="font-serif text-2xl font-semibold text-amber-50 md:text-4xl">
           {mode === 'mine' ? 'Mi colección' : 'Natura para hombre'}
         </h1>
         <div className="pointer-events-auto mt-2 inline-flex rounded-full border border-white/15 bg-black/30 p-0.5 font-mono text-xs backdrop-blur">
@@ -34,7 +35,7 @@ export default function App() {
               key={m.id}
               onClick={() => setMode(m.id)}
               aria-pressed={mode === m.id}
-              className={`rounded-full px-3 py-1 transition ${mode === m.id ? 'bg-amber-200 text-black' : 'text-white/60 hover:text-white'}`}
+              className={`rounded-full px-3 py-1.5 transition md:py-1 ${mode === m.id ? 'bg-amber-200 text-black' : 'text-white/60 hover:text-white'}`}
             >
               {m.label}
             </button>

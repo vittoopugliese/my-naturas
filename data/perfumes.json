@@ -91,7 +91,7 @@
         "cap": "#34373c",
         "capAccent": "#ff5a1a",
         "label": "#f2efe8",
-        "shelfOrder": 2
+        "shelfOrder": 6
       },
       "source": "https://thescentbase.com/perfumes/natura/homem-cor-agio",
       "verified": true
@@ -145,7 +145,7 @@
         "cap": "#1b1b1b",
         "capAccent": null,
         "label": "iridescent",
-        "shelfOrder": 3
+        "shelfOrder": 8
       },
       "source": "https://www.naturacosmeticos.com.ar/p/natura-homem-identidad--eau-de-parfum-100-ml/NATARG-200122",
       "verified": true
@@ -183,7 +183,7 @@
         "cap": "#b4b8bc",
         "capAccent": null,
         "label": "#eef2f4",
-        "shelfOrder": 4
+        "shelfOrder": 9
       },
       "source": "https://thescentbase.com/perfumes/natura/homem",
       "verified": true
@@ -228,7 +228,7 @@
         "cap": "#b4b8bc",
         "capAccent": null,
         "label": "#d8dce0",
-        "shelfOrder": 5
+        "shelfOrder": 10
       },
       "source": "https://thescentbase.com/perfumes/natura/homem-essence",
       "verified": true
@@ -262,7 +262,7 @@
         "cap": "#b4b8bc",
         "capAccent": null,
         "label": "#f2f2f2",
-        "shelfOrder": 6
+        "shelfOrder": 11
       },
       "source": "https://www.parfumo.com/Perfumes/Natura/Homem_Potence",
       "verified": false
@@ -305,7 +305,7 @@
         "cap": "#1b1b1b",
         "capAccent": null,
         "label": "#151515",
-        "shelfOrder": 7
+        "shelfOrder": 12
       },
       "source": "https://thescentbase.com/perfumes/natura/homem-tato",
       "verified": true
@@ -355,7 +355,7 @@
         "cap": "#1b1b1b",
         "capAccent": null,
         "label": "#f2f2f2",
-        "shelfOrder": 8
+        "shelfOrder": 13
       },
       "source": "https://thescentbase.com/perfumes/natura/homem-elo",
       "verified": true
@@ -411,7 +411,7 @@
         "cap": "#3d72cf",
         "capAccent": "#f2f2f2",
         "label": "#ffffff",
-        "shelfOrder": 9
+        "shelfOrder": 14
       },
       "source": "https://thescentbase.com/perfumes/natura/kaiak-sonar",
       "verified": false
@@ -449,7 +449,7 @@
         "cap": "#7a1f2b",
         "capAccent": "#e8b9c4",
         "label": "#ffffff",
-        "shelfOrder": 10
+        "shelfOrder": 23
       },
       "source": "https://thescentbase.com/perfumes/natura/humor-a-dois",
       "verified": true
@@ -490,7 +490,7 @@
         "cap": "#5f7c4a",
         "capAccent": "#bfe6cf",
         "label": "#ffffff",
-        "shelfOrder": 11
+        "shelfOrder": 24
       },
       "source": "https://thescentbase.com/perfumes/natura/humor-6-paz-e-humor",
       "verified": true
@@ -531,7 +531,7 @@
         "cap": "#121212",
         "capAccent": null,
         "label": "#e3cfa0",
-        "shelfOrder": 12
+        "shelfOrder": 25
       },
       "source": "https://guidodecants.com.br/produtos/ekos-copaiba-natura/",
       "verified": true
@@ -567,7 +567,7 @@
         "cap": "#b4b8bc",
         "capAccent": "#8d939a",
         "label": "#3a4048",
-        "shelfOrder": 13,
+        "shelfOrder": 15,
         "estimated": true
       },
       "source": "https://thescentbase.com/perfumes/natura/kaiak-extremo",
@@ -606,7 +606,7 @@
         "cap": "#1b1b1b",
         "capAccent": "#2a2a2a",
         "label": "#f2f2f2",
-        "shelfOrder": 14,
+        "shelfOrder": 16,
         "estimated": true
       },
       "source": "https://thescentbase.com/perfumes/natura/kaiak-noite",
@@ -643,7 +643,7 @@
         "cap": "#2a4fae",
         "capAccent": "#29b6e0",
         "label": "#7fd3f0",
-        "shelfOrder": 15,
+        "shelfOrder": 17,
         "estimated": true
       },
       "source": "https://thescentbase.com/perfumes/natura/kaiak-pulso",
@@ -686,7 +686,7 @@
         "cap": "#2a3446",
         "capAccent": "#c0c4c8",
         "label": "#5fc4ea",
-        "shelfOrder": 16,
+        "shelfOrder": 18,
         "estimated": true
       },
       "source": "https://thescentbase.com/perfumes/natura/kaiak-oceano",
@@ -744,7 +744,7 @@
         "cap": "#111111",
         "capAccent": "#c9a45a",
         "label": "#e8e2d8",
-        "shelfOrder": 17,
+        "shelfOrder": 3,
         "estimated": true
       },
       "source": "https://thescentbase.com/perfumes/natura/essencial-oud-pimenta",
@@ -788,7 +788,7 @@
         "cap": "#2a2420",
         "capAccent": "#b08a5a",
         "label": "#f2e6d6",
-        "shelfOrder": 18,
+        "shelfOrder": 22,
         "estimated": true
       },
       "source": "https://thescentbase.com/perfumes/natura/biografia-assinatura",
@@ -813,7 +813,7 @@
         "cap": "#121212",
         "capAccent": "#c9a45a",
         "label": "#c9a45a",
-        "shelfOrder": 19,
+        "shelfOrder": 7,
         "estimated": true
       },
       "source": "",
@@ -849,7 +849,7 @@
         "cap": "#2c4f7c",
         "capAccent": "#d4e62a",
         "label": "#d4e62a",
-        "shelfOrder": 20,
+        "shelfOrder": 19,
         "estimated": true
       },
       "source": "https://diariodopara.com.br/noticias/natura-lanca-kaiak-21k-com-fresh-amplify-tecnologia-inedita-na-perfumaria/",
@@ -875,7 +875,7 @@
         "cap": "#2b2f36",
         "capAccent": "#2b2f36",
         "label": "#e8eef5",
-        "shelfOrder": 21,
+        "shelfOrder": 20,
         "estimated": true
       },
       "source": "",
@@ -900,7 +900,7 @@
         "cap": "#c4c8cc",
         "capAccent": "#c4c8cc",
         "label": "#f2f2f2",
-        "shelfOrder": 22,
+        "shelfOrder": 21,
         "estimated": true
       },
       "source": "https://nottier.com/perfumes/natura/biografia",
@@ -936,7 +936,7 @@
         "cap": "#141414",
         "capAccent": "#c9a45a",
         "label": "#e8f2ee",
-        "shelfOrder": 23,
+        "shelfOrder": 4,
         "estimated": true
       },
       "source": "https://scentverdict.com/perfume/natura-essencial-sentir-masculino-eau-de-parfum",
@@ -991,7 +991,7 @@
         "cap": "#141414",
         "capAccent": "#c0c4c8",
         "label": "#e8d8de",
-        "shelfOrder": 24,
+        "shelfOrder": 5,
         "estimated": true
       },
       "source": "https://thescentbase.com/perfumes/natura/essencial-atrai",
@@ -1048,7 +1048,7 @@
         "cap": "#f2f2f2",
         "capAccent": "#c9a45a",
         "label": "#8a6a2a",
-        "shelfOrder": 25,
+        "shelfOrder": 2,
         "estimated": true
       },
       "source": "https://thescentbase.com/perfumes/natura/essencial-exclusivo-floral",

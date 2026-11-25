@@ -10,6 +10,7 @@ import { Stage } from '../three/Stage'
 import type { Perfume } from '../types'
 import { DetailPanel } from '../ui/DetailPanel'
 import { Filters } from '../ui/Filters'
+import { useCompact, useSwipe } from '../useMobile'
 import { toggle, useSelection } from '../useSelection'
 
 /** Men's lines, in the order the shelves are stacked (top to bottom). */
@@ -39,6 +40,7 @@ function buildShelves(): Shelf[] {
 /** Every Natura men's line, one shelf per line, ordered by year. Loaded on demand. */
 export default function Catalog() {
   const shelves = useMemo(buildShelves, [])
+  const compact = useCompact()
   const [current, setCurrent] = useState(0)
   const shelf = shelves[current]
   const { selectedId, setSelectedId, hoveredId, setHoveredId, step } = useSelection(shelf.perfumes)
@@ -72,8 +74,11 @@ export default function Catalog() {
     ? { kind: 'bottle', x: shelf.layout.byId[selected.id].x, y: shelf.y, h: sizeOf(selected).h }
     : { kind: 'shelf', y: shelf.y, width: shelf.layout.total + SHELF_MARGIN }
 
+  const swipe = useSwipe(step, compact && selected !== null)
+
   return (
     <>
+      <div className="absolute inset-0 touch-none" {...swipe}>
       <Canvas
         dpr={[1, 2]}
         camera={{ position: [0, 1.6, 14], fov: FOV, near: 0.1, far: 100 }}
@@ -91,31 +96,32 @@ export default function Catalog() {
                 label={`${s.line} · ${s.perfumes.length}`}
                 marked={ownedIds}
                 selectedId={i === current ? selectedId : null}
-                hoveredId={hoveredId}
+                hoveredId={compact ? null : hoveredId}
                 matches={matches}
                 onHover={setHoveredId}
                 onSelect={select}
               />
             ) : null,
           )}
-          <CameraRig focus={focus} />
+          <CameraRig focus={focus} compact={compact} />
         </Suspense>
       </Canvas>
+      </div>
 
-      <div className="pointer-events-none absolute inset-0 flex flex-col justify-between p-5 pt-28 md:p-8 md:pt-32">
+      <div className="pointer-events-none absolute inset-0 flex flex-col justify-between p-5 pt-28 pb-[max(1.25rem,env(safe-area-inset-bottom))] md:p-8 md:pt-32">
         <div>
           <p className="font-mono text-xs text-white/50">
             {total} perfumes · {shelves.length} líneas · ★ en mi estante
           </p>
           {!selected && (
-            <nav className="pointer-events-auto mt-4 flex max-w-full gap-1 overflow-x-auto md:w-44 md:flex-col md:overflow-visible">
+            <nav className="pointer-events-auto -mx-5 mt-4 flex gap-1 overflow-x-auto px-5 [scrollbar-width:none] md:mx-0 md:w-44 md:px-0 md:flex-col md:overflow-visible">
               {shelves.map((s, i) => {
                 const mineHere = s.perfumes.filter((p) => ownedIds.has(p.id)).length
                 return (
                   <button
                     key={s.line}
                     onClick={() => goTo(i)}
-                    className={`flex shrink-0 items-baseline justify-between gap-3 rounded px-2 py-1 text-left font-mono text-xs transition ${
+                    className={`flex shrink-0 items-baseline justify-between gap-3 rounded-full px-3 py-2 text-left font-mono md:rounded md:px-2 md:py-1 text-xs transition ${
                       i === current ? 'bg-amber-200 text-black' : 'text-white/60 hover:bg-white/10'
                     }`}
                   >
@@ -132,6 +138,7 @@ export default function Catalog() {
         </div>
         {!selected && (
           <div className="flex flex-col gap-2">
+            <p className="font-mono text-[11px] text-white/40 md:hidden">Deslizá para recorrer el estante · tocá un frasco</p>
             <p className="hidden font-mono text-[11px] text-white/40 md:block">
               ↑ ↓ cambian de estante · click derecho y arrastrar recorre los estantes largos
             </p>
@@ -148,6 +155,8 @@ export default function Catalog() {
         <DetailPanel
           perfume={selected}
           owned={ownedIds.has(selected.id)}
+          position={`${shelf.perfumes.indexOf(selected) + 1} / ${shelf.perfumes.length}`}
+          swipe={compact ? swipe : undefined}
           onClose={() => setSelectedId(null)}
           onPrev={() => step(-1)}
           onNext={() => step(1)}

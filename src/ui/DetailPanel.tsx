@@ -1,4 +1,5 @@
 import type { Perfume } from '../types'
+import type { useSwipe } from '../useMobile'
 
 const TIERS = [
   { key: 'top', label: 'Salida' },
@@ -10,6 +11,10 @@ type Props = {
   perfume: Perfume
   /** Shown in the catalog, where most bottles are not mine. */
   owned?: boolean
+  /** Place in the list, such as "3 / 25". */
+  position?: string
+  /** Phone only: swipe the sheet left / right to go to the next / previous bottle. */
+  swipe?: ReturnType<typeof useSwipe>
   onClose: () => void
   onPrev: () => void
   onNext: () => void
@@ -25,31 +30,34 @@ function accentOf(p: Perfume) {
   return capAccent ?? '#c9a77a'
 }
 
-export function DetailPanel({ perfume: p, owned, onClose, onPrev, onNext }: Props) {
+export function DetailPanel({ perfume: p, owned, position, swipe, onClose, onPrev, onNext }: Props) {
   const tint = accentOf(p)
   return (
     <aside
-      className="pointer-events-auto absolute inset-x-0 bottom-0 max-h-[55vh] overflow-y-auto rounded-t-2xl border-t border-white/10 bg-[#17110d]/90 p-6 backdrop-blur-md md:inset-y-0 md:right-0 md:left-auto md:max-h-none md:w-[420px] md:rounded-none md:border-t-0 md:border-l"
+      {...swipe}
+      className="pointer-events-auto absolute inset-x-0 bottom-0 max-h-[52dvh] overflow-y-auto overscroll-contain rounded-t-3xl select-none md:select-text border-t border-white/10 bg-[#17110d]/90 px-5 pt-3 pb-[max(1.5rem,env(safe-area-inset-bottom))] backdrop-blur-md md:inset-y-0 md:p-6 md:right-0 md:left-auto md:max-h-none md:w-[420px] md:rounded-none md:border-t-0 md:border-l"
       style={{ backgroundImage: `linear-gradient(160deg, ${tint}55, transparent 45%)` }}
     >
+      <div className="mx-auto mb-3 h-1 w-10 rounded-full bg-white/25 md:hidden" />
       <div className="flex items-center justify-between font-mono text-xs text-white/50">
         <span>
           {p.brand} · {p.line}
+          {position && <span className="ml-2 text-white/30">{position}</span>}
         </span>
         <div className="flex gap-1">
-          <button onClick={onPrev} className="rounded px-2 py-1 hover:bg-white/10" aria-label="Anterior">
+          <button onClick={onPrev} className="grid size-10 place-items-center rounded-full text-base hover:bg-white/10 active:bg-white/20 md:size-8 md:text-xs" aria-label="Anterior">
             ←
           </button>
-          <button onClick={onNext} className="rounded px-2 py-1 hover:bg-white/10" aria-label="Siguiente">
+          <button onClick={onNext} className="grid size-10 place-items-center rounded-full text-base hover:bg-white/10 active:bg-white/20 md:size-8 md:text-xs" aria-label="Siguiente">
             →
           </button>
-          <button onClick={onClose} className="rounded px-2 py-1 hover:bg-white/10" aria-label="Cerrar">
+          <button onClick={onClose} className="grid size-10 place-items-center rounded-full text-base hover:bg-white/10 active:bg-white/20 md:size-8 md:text-xs" aria-label="Cerrar">
             ✕
           </button>
         </div>
       </div>
 
-      <h2 className="mt-3 font-serif text-4xl leading-tight font-semibold text-amber-50">{p.name}</h2>
+      <h2 className="mt-2 font-serif text-3xl md:mt-3 md:text-4xl leading-tight font-semibold text-amber-50">{p.name}</h2>
       <p className="mt-1 font-serif text-lg text-white/70 italic">{p.family}</p>
       {owned && (
         <p className="mt-3 inline-block rounded-full bg-amber-200 px-3 py-0.5 font-mono text-[11px] text-black">En mi estante</p>
@@ -68,7 +76,7 @@ export function DetailPanel({ perfume: p, owned, onClose, onPrev, onNext }: Prop
         )}
       </dl>
 
-      <div className="mt-6 space-y-4">
+      <div className="mt-5 space-y-4 md:mt-6">
         {TIERS.map(({ key, label }, i) => (
           <section key={key}>
             <h3 className="mb-2 font-mono text-[11px] tracking-widest text-white/40 uppercase">{label}</h3>
