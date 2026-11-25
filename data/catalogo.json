@@ -1,7 +1,7 @@
 {
  "_meta": {
   "updated": "2026-11-21",
-  "notes": "Natura men's and unisex perfumes from thescentbase.com (gender, year, notes, perfumers). Excludes the ones in data/perfumes.json, which the app merges in by id. bottle.* is estimated: colors sampled from the product photo, shape chosen by line and year (bottle.estimated = true). concentration is empty because the source does not list it.",
+  "notes": "Natura men's and unisex perfumes from thescentbase.com (gender, year, notes, perfumers). Excludes the ones in data/perfumes.json, which the app merges in by id. bottle.* is estimated: colors sampled from the product photo, (bottle.estimated = true). The bottle model comes from the line. concentration is empty because the source does not list it.",
   "ownedSlugs": {
    "essencial-exclusivo": "essencial-exclusivo",
    "homem-cor-agio": "homem-coragio",
@@ -11,7 +11,16 @@
    "homem-elo": "homem-elo",
    "kaiak-sonar": "kaiak-sonar",
    "humor-a-dois": "humor-a-dois",
-   "humor-6-paz-e-humor": "humor-e-paz"
+   "humor-6-paz-e-humor": "humor-e-paz",
+   "kaiak-extremo": "kaiak-extremo",
+   "kaiak-noite": "kaiak-noite",
+   "kaiak-pulso": "kaiak-pulso",
+   "kaiak-oceano": "kaiak-oceano",
+   "essencial-oud-pimenta": "essencial-oud-pimenta",
+   "biografia-assinatura": "biografia-assinatura",
+   "essencial-atrai": "essencial-atrai",
+   "essencial-sentir": "essencial-sentir",
+   "essencial-exclusivo-floral": "essencial-exclusivo-floral"
   }
  },
  "perfumes": [
@@ -38,14 +47,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#d3ddb9",
     "cap": "#b5b7ba",
     "capAccent": null,
     "label": "#1a1a1a",
     "shelfOrder": 0,
-    "yaw": 30,
-    "aspect": 0.635,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/homem-acqua",
@@ -76,14 +82,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#550712",
     "cap": "#3c393b",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
-    "aspect": 0.64,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/homem-aurum",
@@ -118,14 +121,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#110b04",
     "cap": "#292927",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
-    "aspect": 0.641,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/homem-aurum-intenso",
@@ -164,14 +164,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#aca5a3",
     "cap": "#f3dacb",
     "capAccent": null,
     "label": "#1a1a1a",
     "shelfOrder": 0,
-    "yaw": 30,
-    "aspect": 0.585,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/homem-cromo",
@@ -212,13 +209,11 @@
     ]
    },
    "bottle": {
-    "shape": "homem-rect",
     "glass": "#1f1f1b",
     "cap": "#80684d",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 44,
     "glassGradientTo": "#8f694d",
     "estimated": true
    },
@@ -262,14 +257,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#543024",
     "cap": "#3f2a2a",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
-    "aspect": 0.641,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/homem-elemento",
@@ -316,13 +308,11 @@
     ]
    },
    "bottle": {
-    "shape": "homem-rect",
     "glass": "#beb0a1",
     "cap": "#c2b4a5",
     "capAccent": null,
     "label": "#1a1a1a",
     "shelfOrder": 0,
-    "yaw": 44,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/homem-emocion-e",
@@ -366,13 +356,11 @@
     ]
    },
    "bottle": {
-    "shape": "homem-rect",
     "glass": "#d9e2dd",
     "cap": "#636873",
     "capAccent": null,
     "label": "#1a1a1a",
     "shelfOrder": 0,
-    "yaw": 44,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/homem-especiarias",
@@ -406,14 +394,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#a5a697",
     "cap": "#c7c6c4",
     "capAccent": null,
     "label": "#1a1a1a",
     "shelfOrder": 0,
-    "yaw": 30,
-    "aspect": 0.645,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/homem-ion",
@@ -450,15 +435,12 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#302f30",
     "cap": "#665e67",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
     "glassGradientTo": "#c4c2ca",
-    "aspect": 0.624,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/homem-madeiras",
@@ -504,13 +486,11 @@
     ]
    },
    "bottle": {
-    "shape": "homem-rect",
     "glass": "#836e6f",
     "cap": "#ba8e6d",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 44,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/homem-neo",
@@ -546,14 +526,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#256c84",
     "cap": "#d1cdcb",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
-    "aspect": 0.638,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/homem-nitro",
@@ -584,15 +561,12 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#010102",
     "cap": "#939292",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
     "glassGradientTo": "#727fa2",
-    "aspect": 0.643,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/homem-nitro-intenso",
@@ -622,13 +596,11 @@
     ]
    },
    "bottle": {
-    "shape": "homem-rect",
     "glass": "#81312e",
     "cap": "#75767e",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 44,
     "glassGradientTo": "#cab195",
     "estimated": true
    },
@@ -666,13 +638,11 @@
     ]
    },
    "bottle": {
-    "shape": "homem-rect",
     "glass": "#92816a",
     "cap": "#9a8871",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 44,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/homem-re-conecta",
@@ -711,13 +681,11 @@
     ]
    },
    "bottle": {
-    "shape": "homem-rect",
     "glass": "#af2212",
     "cap": "#bdb8b3",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 44,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/homem-sagaz",
@@ -764,13 +732,11 @@
     ]
    },
    "bottle": {
-    "shape": "homem-rect",
     "glass": "#797974",
     "cap": "#c1c1be",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 44,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/homem-verse",
@@ -812,13 +778,11 @@
     ]
    },
    "bottle": {
-    "shape": "homem-rect",
     "glass": "#162503",
     "cap": "#b0a9ac",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 44,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/homem-verum",
@@ -862,14 +826,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#b7dce9",
     "cap": "#999c9a",
     "capAccent": null,
     "label": "#1a1a1a",
     "shelfOrder": 0,
-    "yaw": 30,
-    "aspect": 0.641,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/homem-zero-grau",
@@ -926,13 +887,11 @@
     ]
    },
    "bottle": {
-    "shape": "homem-rect",
     "glass": "#a7af89",
     "cap": "#868280",
     "capAccent": null,
     "label": "#1a1a1a",
     "shelfOrder": 0,
-    "yaw": 44,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/natura-homem-aromaticos",
@@ -978,15 +937,12 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#ac5e61",
     "cap": "#a6120a",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
     "glassGradientTo": "#e8d1a3",
-    "aspect": 0.373,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/essencial-ato",
@@ -1026,14 +982,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#3d3c3a",
     "cap": "#181715",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
-    "aspect": 0.617,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/essencial-estilo",
@@ -1068,14 +1021,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#993a1a",
     "cap": "#1a1918",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
-    "aspect": 0.56,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/essencial-intenso",
@@ -1120,14 +1070,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#c66518",
     "cap": "#3f322f",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
-    "aspect": 0.56,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/essencial-masculino",
@@ -1173,14 +1120,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#cd702e",
     "cap": "#4a4a4a",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
-    "aspect": 0.579,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/essencial-mirra",
@@ -1226,77 +1170,14 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#024b75",
     "cap": "#3a353f",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
-    "aspect": 0.574,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/essencial-oud",
-   "verified": false
-  },
-  {
-   "id": "essencial-oud-pimenta",
-   "brand": "Natura",
-   "line": "Essencial",
-   "name": "Essencial Oud Pimenta",
-   "concentration": "",
-   "year": 2021,
-   "perfumers": [
-    "Rodrigo Flores-Roux",
-    "John Gamba",
-    "Verônica Kato"
-   ],
-   "family": "Amaderada",
-   "notes": {
-    "top": [
-     "bergamota",
-     "pimienta negra",
-     "ishpink",
-     "limón",
-     "pimienta",
-     "priprioca",
-     "azafrán"
-    ],
-    "heart": [
-     "manzana",
-     "arándano",
-     "salvia esclarea",
-     "cilantro",
-     "geranio",
-     "frambuesa",
-     "rosa"
-    ],
-    "base": [
-     "oud",
-     "ámbar",
-     "breu-branco",
-     "cypriol",
-     "bálsamo de gurjun",
-     "cuero",
-     "almizcle",
-     "pachulí",
-     "bálsamo del perú",
-     "sándalo",
-     "vetiver"
-    ]
-   },
-   "bottle": {
-    "shape": "generic-rect",
-    "glass": "#575b6b",
-    "cap": "#15190f",
-    "capAccent": null,
-    "label": "#f2f2f2",
-    "shelfOrder": 0,
-    "yaw": 30,
-    "aspect": 0.568,
-    "estimated": true
-   },
-   "source": "https://thescentbase.com/perfumes/natura/essencial-oud-pimenta",
    "verified": false
   },
   {
@@ -1330,13 +1211,11 @@
     ]
    },
    "bottle": {
-    "shape": "kaiak-tall",
     "glass": "#05bbba",
     "cap": "#6ebeb7",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 22,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/kaiak-aero",
@@ -1369,14 +1248,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#048176",
     "cap": "#036f4d",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
-    "aspect": 0.51,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/kaiak-aventura",
@@ -1406,14 +1282,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#e0dbd2",
     "cap": "#48543d",
     "capAccent": null,
     "label": "#1a1a1a",
     "shelfOrder": 0,
-    "yaw": 30,
-    "aspect": 0.484,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/kaiak-aventura-expedicoes",
@@ -1443,14 +1316,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#a59c94",
     "cap": "#0b8fbe",
     "capAccent": null,
     "label": "#1a1a1a",
     "shelfOrder": 0,
-    "yaw": 30,
-    "aspect": 0.495,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/kaiak-ecomotion",
@@ -1494,98 +1364,14 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#2f1f14",
     "cap": "#554139",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
-    "aspect": 0.494,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/kaiak-expedicao",
-   "verified": false
-  },
-  {
-   "id": "kaiak-extremo",
-   "brand": "Natura",
-   "line": "Kaiak",
-   "name": "Kaiak Extremo",
-   "concentration": "",
-   "year": 2014,
-   "perfumers": [],
-   "family": "Aromática fougère",
-   "notes": {
-    "top": [
-     "bergamota",
-     "limón",
-     "mandarina"
-    ],
-    "heart": [
-     "lirio del valle",
-     "azahar",
-     "notas amaderadas"
-    ],
-    "base": [
-     "ámbar",
-     "almizcle",
-     "musgo de roble"
-    ]
-   },
-   "bottle": {
-    "shape": "generic-rect",
-    "glass": "#b6b5b5",
-    "cap": "#9c9997",
-    "capAccent": null,
-    "label": "#1a1a1a",
-    "shelfOrder": 0,
-    "yaw": 30,
-    "aspect": 0.497,
-    "estimated": true
-   },
-   "source": "https://thescentbase.com/perfumes/natura/kaiak-extremo",
-   "verified": false
-  },
-  {
-   "id": "kaiak-noite",
-   "brand": "Natura",
-   "line": "Kaiak",
-   "name": "Kaiak Noite",
-   "concentration": "",
-   "year": 2020,
-   "perfumers": [
-    "Verônica Kato"
-   ],
-   "family": "Aromática",
-   "notes": {
-    "top": [
-     "pimienta negra",
-     "jengibre",
-     "menta piperita"
-    ],
-    "heart": [
-     "enebro",
-     "lavanda",
-     "olíbano"
-    ],
-    "base": [
-     "ámbar",
-     "sándalo",
-     "vetiver"
-    ]
-   },
-   "bottle": {
-    "shape": "kaiak-tall",
-    "glass": "#021a2d",
-    "cap": "#05060d",
-    "capAccent": null,
-    "label": "#f2f2f2",
-    "shelfOrder": 0,
-    "yaw": 22,
-    "estimated": true
-   },
-   "source": "https://thescentbase.com/perfumes/natura/kaiak-noite",
    "verified": false
   },
   {
@@ -1629,101 +1415,14 @@
     ]
    },
    "bottle": {
-    "shape": "kaiak-tall",
     "glass": "#c5d3db",
     "cap": "#1c7cac",
     "capAccent": null,
     "label": "#1a1a1a",
     "shelfOrder": 0,
-    "yaw": 22,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/kaiak-o2",
-   "verified": false
-  },
-  {
-   "id": "kaiak-oceano",
-   "brand": "Natura",
-   "line": "Kaiak",
-   "name": "Kaiak Oceano",
-   "concentration": "",
-   "year": 2020,
-   "perfumers": [
-    "Alienor Massenet",
-    "Verônica Kato"
-   ],
-   "family": "Aromática acuática",
-   "notes": {
-    "top": [
-     "pataqueira",
-     "algas",
-     "notas acuáticas"
-    ],
-    "heart": [
-     "notas aromáticas",
-     "sal marina"
-    ],
-    "base": [
-     "ámbar gris",
-     "amyris",
-     "cedro",
-     "musgo",
-     "pachulí",
-     "haba tonka"
-    ]
-   },
-   "bottle": {
-    "shape": "kaiak-tall",
-    "glass": "#121e2d",
-    "cap": "#424c5a",
-    "capAccent": null,
-    "label": "#f2f2f2",
-    "shelfOrder": 0,
-    "yaw": 22,
-    "glassGradientTo": "#2d92bf",
-    "estimated": true
-   },
-   "source": "https://thescentbase.com/perfumes/natura/kaiak-oceano",
-   "verified": false
-  },
-  {
-   "id": "kaiak-pulso",
-   "brand": "Natura",
-   "line": "Kaiak",
-   "name": "Kaiak Pulso",
-   "concentration": "",
-   "year": 2010,
-   "perfumers": [],
-   "family": "Aromática",
-   "notes": {
-    "top": [
-     "bergamota",
-     "limón",
-     "lima"
-    ],
-    "heart": [
-     "cilantro",
-     "lirio del valle",
-     "rosa"
-    ],
-    "base": [
-     "cedro",
-     "maderas exóticas",
-     "almizcle"
-    ]
-   },
-   "bottle": {
-    "shape": "generic-rect",
-    "glass": "#042555",
-    "cap": "#0489c3",
-    "capAccent": null,
-    "label": "#f2f2f2",
-    "shelfOrder": 0,
-    "yaw": 30,
-    "aspect": 0.51,
-    "estimated": true
-   },
-   "source": "https://thescentbase.com/perfumes/natura/kaiak-pulso",
    "verified": false
   },
   {
@@ -1767,13 +1466,11 @@
     ]
    },
    "bottle": {
-    "shape": "kaiak-tall",
     "glass": "#b8c7cf",
     "cap": "#a8b4bd",
     "capAccent": null,
     "label": "#1a1a1a",
     "shelfOrder": 0,
-    "yaw": 22,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/kaiak-ultra-masculino",
@@ -1814,14 +1511,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#605f53",
     "cap": "#6c7051",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
-    "aspect": 0.507,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/kaiak-urbe",
@@ -1861,13 +1555,11 @@
     ]
    },
    "bottle": {
-    "shape": "kaiak-tall",
     "glass": "#056f68",
     "cap": "#054954",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 22,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/kaiak-vital",
@@ -1917,13 +1609,11 @@
     ]
    },
    "bottle": {
-    "shape": "kaiak-tall",
     "glass": "#161217",
     "cap": "#3b383b",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 22,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/k-max",
@@ -1955,13 +1645,11 @@
     ]
    },
    "bottle": {
-    "shape": "humor-pebble",
     "glass": "#500814",
     "cap": "#37020f",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/humor-2",
@@ -2002,13 +1690,11 @@
     ]
    },
    "bottle": {
-    "shape": "humor-pebble",
     "glass": "#2e026e",
     "cap": "#020202",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/humor-4",
@@ -2042,13 +1728,11 @@
     ]
    },
    "bottle": {
-    "shape": "humor-pebble",
     "glass": "#020202",
     "cap": "#020202",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/humor-a-rigor",
@@ -2088,13 +1772,11 @@
     ]
    },
    "bottle": {
-    "shape": "humor-pebble",
     "glass": "#004abc",
     "cap": "#020716",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
     "glassGradientTo": "#feed2f",
     "estimated": true
    },
@@ -2142,13 +1824,11 @@
     ]
    },
    "bottle": {
-    "shape": "humor-pebble",
     "glass": "#e2b794",
     "cap": "#96496e",
     "capAccent": null,
     "label": "#1a1a1a",
     "shelfOrder": 0,
-    "yaw": 30,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/humor-envolve",
@@ -2185,13 +1865,11 @@
     ]
    },
    "bottle": {
-    "shape": "humor-pebble",
     "glass": "#040405",
     "cap": "#030303",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
     "glassGradientTo": "#9c7eca",
     "estimated": true
    },
@@ -2233,13 +1911,11 @@
     ]
    },
    "bottle": {
-    "shape": "humor-pebble",
     "glass": "#dfc9cc",
     "cap": "#6595c8",
     "capAccent": null,
     "label": "#1a1a1a",
     "shelfOrder": 0,
-    "yaw": 30,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/humor-liberta",
@@ -2286,13 +1962,11 @@
     ]
    },
    "bottle": {
-    "shape": "humor-pebble",
     "glass": "#f4c435",
     "cap": "#dc160f",
     "capAccent": null,
     "label": "#1a1a1a",
     "shelfOrder": 0,
-    "yaw": 30,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/humor-transforma",
@@ -2328,13 +2002,11 @@
     ]
    },
    "bottle": {
-    "shape": "humor-pebble",
     "glass": "#939194",
     "cap": "#827f83",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/borbulhas-de-humor",
@@ -2364,13 +2036,11 @@
     ]
    },
    "bottle": {
-    "shape": "humor-pebble",
     "glass": "#896b9e",
     "cap": "#789648",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/conexao-de-humor",
@@ -2414,13 +2084,11 @@
     ]
    },
    "bottle": {
-    "shape": "humor-pebble",
     "glass": "#e58007",
     "cap": "#872910",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/formula-do-humor",
@@ -2457,13 +2125,11 @@
     ]
    },
    "bottle": {
-    "shape": "ekos-round",
     "glass": "#a03014",
     "cap": "#ae866f",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 0,
     "glassGradientTo": "#ca9e7f",
     "estimated": true
    },
@@ -2508,13 +2174,11 @@
     ]
    },
    "bottle": {
-    "shape": "ekos-round",
     "glass": "#b7d8b9",
     "cap": "#2d2d2b",
     "capAccent": null,
     "label": "#1a1a1a",
     "shelfOrder": 0,
-    "yaw": 0,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/ekos-estoraque-2021",
@@ -2550,13 +2214,11 @@
     ]
    },
    "bottle": {
-    "shape": "ekos-round",
     "glass": "#717974",
     "cap": "#929591",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 0,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/ekos-pedra",
@@ -2592,64 +2254,15 @@
     ]
    },
    "bottle": {
-    "shape": "ekos-round",
     "glass": "#994f11",
     "cap": "#a09a71",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 0,
     "glassGradientTo": "#afa36f",
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/ekos-raiz",
-   "verified": false
-  },
-  {
-   "id": "biografia-assinatura",
-   "brand": "Natura",
-   "line": "Biografia",
-   "name": "Biografia Assinatura",
-   "concentration": "",
-   "year": 2019,
-   "perfumers": [
-    "Verônica Kato"
-   ],
-   "family": "Amaderada aromática",
-   "notes": {
-    "top": [
-     "pimienta negra",
-     "mandarina",
-     "pimienta rosa",
-     "violeta"
-    ],
-    "heart": [
-     "lavanda",
-     "cuero",
-     "romero",
-     "salvia"
-    ],
-    "base": [
-     "breu-branco",
-     "cashmeran",
-     "musgo de roble",
-     "palo santo",
-     "haba tonka",
-     "vetiver"
-    ]
-   },
-   "bottle": {
-    "shape": "generic-rect",
-    "glass": "#722010",
-    "cap": "#261815",
-    "capAccent": null,
-    "label": "#f2f2f2",
-    "shelfOrder": 0,
-    "yaw": 30,
-    "aspect": 0.724,
-    "estimated": true
-   },
-   "source": "https://thescentbase.com/perfumes/natura/biografia-assinatura",
    "verified": false
   },
   {
@@ -2674,14 +2287,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#86cade",
     "cap": "#90949b",
     "capAccent": null,
     "label": "#1a1a1a",
     "shelfOrder": 0,
-    "yaw": 30,
-    "aspect": 0.766,
     "estimated": true
    },
    "source": "https://thescentbase.com/perfumes/natura/biografia-verao",
@@ -2718,13 +2328,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#016945",
     "cap": "#2c282a",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
     "aspect": 0.351,
     "estimated": true
    },
@@ -2758,13 +2366,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#907b0f",
     "cap": "#73706a",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
     "aspect": 0.339,
     "estimated": true
    },
@@ -2800,13 +2406,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#a96e31",
     "cap": "#8c807d",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
     "aspect": 0.34,
     "estimated": true
    },
@@ -2831,13 +2435,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#030101",
     "cap": "#a7a19e",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
     "aspect": 0.346,
     "estimated": true
    },
@@ -2873,13 +2475,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#12110d",
     "cap": "#49454b",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
     "aspect": 0.351,
     "estimated": true
    },
@@ -2907,13 +2507,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#94626c",
     "cap": "#9a989b",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
     "aspect": 0.352,
     "estimated": true
    },
@@ -2945,13 +2543,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#079774",
     "cap": "#9c8978",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
     "aspect": 0.339,
     "estimated": true
    },
@@ -2987,13 +2583,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#ffeecd",
     "cap": "#292222",
     "capAccent": null,
     "label": "#1a1a1a",
     "shelfOrder": 0,
-    "yaw": 30,
     "aspect": 0.526,
     "estimated": true
    },
@@ -3033,13 +2627,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#bee0cf",
     "cap": "#635c5b",
     "capAccent": null,
     "label": "#1a1a1a",
     "shelfOrder": 0,
-    "yaw": 30,
     "aspect": 0.541,
     "estimated": true
    },
@@ -3076,13 +2668,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#77736f",
     "cap": "#bdbab9",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
     "glassGradientTo": "#d2cec3",
     "aspect": 0.27,
     "estimated": true
@@ -3119,13 +2709,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#d0d1c0",
     "cap": "#121b1d",
     "capAccent": null,
     "label": "#1a1a1a",
     "shelfOrder": 0,
-    "yaw": 30,
     "aspect": 0.28,
     "estimated": true
    },
@@ -3169,13 +2757,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#2a1640",
     "cap": "#060404",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
     "aspect": 0.274,
     "estimated": true
    },
@@ -3216,13 +2802,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#bb0113",
     "cap": "#262328",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
     "aspect": 0.269,
     "estimated": true
    },
@@ -3252,13 +2836,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#a6a8a9",
     "cap": "#1d1c1d",
     "capAccent": null,
     "label": "#1a1a1a",
     "shelfOrder": 0,
-    "yaw": 30,
     "aspect": 0.27,
     "estimated": true
    },
@@ -3298,13 +2880,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#565656",
     "cap": "#2d2c2a",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
     "aspect": 0.27,
     "estimated": true
    },
@@ -3345,13 +2925,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#f5ebd4",
     "cap": "#837152",
     "capAccent": null,
     "label": "#1a1a1a",
     "shelfOrder": 0,
-    "yaw": 30,
     "aspect": 0.465,
     "estimated": true
    },
@@ -3388,13 +2966,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#4f652f",
     "cap": "#554c47",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
     "aspect": 0.636,
     "estimated": true
    },
@@ -3437,13 +3013,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#130302",
     "cap": "#132c31",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
     "aspect": 0.658,
     "estimated": true
    },
@@ -3474,13 +3048,11 @@
     ]
    },
    "bottle": {
-    "shape": "generic-rect",
     "glass": "#1a1b18",
     "cap": "#77777a",
     "capAccent": null,
     "label": "#f2f2f2",
     "shelfOrder": 0,
-    "yaw": 30,
     "glassGradientTo": "#a4b8bf",
     "aspect": 0.631,
     "estimated": true

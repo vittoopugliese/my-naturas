@@ -1,10 +1,8 @@
-export type BottleShape = 'homem-rect' | 'coragio-frame' | 'essencial-faceted' | 'kaiak-tall' | 'humor-pebble' | 'ekos-round' | 'generic-rect'
-
 /** gloss = shiny glass (default), matte = coated, frosted = satin glass. */
 export type Finish = 'gloss' | 'matte' | 'frosted'
 
+/** Colors of one bottle. The model itself comes from the line (see `shapeOf`). */
 export interface Bottle {
-  shape: BottleShape
   glass: string
   /** Bottom color for bottles that fade from color at the top to clear glass at the bottom. */
   glassGradientTo?: string
@@ -14,9 +12,7 @@ export interface Bottle {
   /** Label text color, or "iridescent". */
   label?: string
   shelfOrder: number
-  /** Degrees the bottle is turned on the shelf; positive shows its right side. */
-  yaw?: number
-  /** Width / height of the product photo; sizes the generic bottle. */
+  /** Width / height of the product photo; sizes the generic bottle of lines without a model. */
   aspect?: number
   /** Shape and colors guessed from a product photo, not checked against the real bottle. */
   estimated?: boolean

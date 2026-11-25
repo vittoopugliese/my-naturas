@@ -1,9 +1,10 @@
-import { useMemo } from 'react'
-import { BufferGeometry, Float32BufferAttribute, Vector3 } from 'three'
+import { BoxGeometry, BufferGeometry, CylinderGeometry, Float32BufferAttribute, Vector3 } from 'three'
 import { CapMaterial, Glass, Label } from '../materials'
-import type { ShapeDef, ShapeProps } from './common'
+import { once, type ShapeDef, type ShapeProps } from './common'
 
-// Essencial Exclusivo: big matte block whose front-left is cut into angled facets.
+// Every Essencial: big block whose front-left is cut into angled facets, gold or silver neck and a
+// square cap. The perfumes only change colors (Exclusivo is matte grey, Oud Pimenta fades navy to
+// copper, Sentir is green, Atrai is plum).
 const W = 1.12
 const H = 1.35
 const D = 0.62
@@ -46,6 +47,7 @@ function facetedBody() {
   ]
   const center = v(0, H / 2, 0)
   const out: number[] = []
+  const uv: number[] = []
   const ab = new Vector3()
   const ac = new Vector3()
   for (const poly of faces) {
@@ -57,34 +59,41 @@ function facetedBody() {
       const mid = a.clone().add(b).add(cc).divideScalar(3).sub(center)
       if (n.dot(mid) < 0) [b, cc] = [cc, b]
       out.push(a.x, a.y, a.z, b.x, b.y, b.z, cc.x, cc.y, cc.z)
+      // v follows height, for bottles that fade from one color to another.
+      uv.push(0.5, a.y / H, 0.5, b.y / H, 0.5, cc.y / H)
     }
   }
   const g = new BufferGeometry()
   g.setAttribute('position', new Float32BufferAttribute(out, 3))
+  g.setAttribute('uv', new Float32BufferAttribute(uv, 2))
   g.computeVertexNormals()
   return g
 }
 
+const geo = once(() => ({
+  body: facetedBody(),
+  neck: new CylinderGeometry(0.17, 0.17, NECK_H, 40),
+  capBase: new BoxGeometry(CAP_W * 0.94, 0.03, D * 0.78),
+  cap: new BoxGeometry(CAP_W, CAP_H, D * 0.82),
+}))
+
 function Essencial({ p, title, subtitle }: ShapeProps) {
-  const { glass, finish, cap, capAccent, label = '#d4d4d6' } = p.bottle
-  const body = useMemo(facetedBody, [])
+  const { glass, glassGradientTo, finish, cap, capAccent, label = '#d4d4d6' } = p.bottle
+  const g = geo()
   const front = D / 2 + 0.003
   const x0 = -W * 0.14
   return (
-    <group>
-      <mesh geometry={body}>
-        <Glass color={glass} finish={finish} />
+    <group dispose={null}>
+      <mesh geometry={g.body}>
+        <Glass color={glass} gradientTo={glassGradientTo} finish={finish} />
       </mesh>
-      <mesh position={[0, H + NECK_H / 2, 0]}>
-        <cylinderGeometry args={[0.17, 0.17, NECK_H, 40]} />
+      <mesh geometry={g.neck} position={[0, H + NECK_H / 2, 0]}>
         <CapMaterial color={capAccent ?? '#d9dcdf'} metal roughness={0.35} />
       </mesh>
-      <mesh position={[0, H + NECK_H + 0.015, 0]}>
-        <boxGeometry args={[CAP_W * 0.94, 0.03, D * 0.78]} />
+      <mesh geometry={g.capBase} position={[0, H + NECK_H + 0.015, 0]}>
         <CapMaterial color="#1c1c1e" />
       </mesh>
-      <mesh position={[0, H + NECK_H + 0.03 + CAP_H / 2, 0]}>
-        <boxGeometry args={[CAP_W, CAP_H, D * 0.82]} />
+      <mesh geometry={g.cap} position={[0, H + NECK_H + 0.03 + CAP_H / 2, 0]}>
         <CapMaterial color={cap} roughness={0.65} />
       </mesh>
       <Label position={[x0, 0.29, front]} size={0.04} spacing={0.02} anchorX="left" color={label}>
@@ -102,5 +111,6 @@ function Essencial({ p, title, subtitle }: ShapeProps) {
 
 export const essencial: ShapeDef = {
   size: { w: W, h: H + NECK_H + 0.03 + CAP_H, d: D },
+  yaw: 18,
   Component: Essencial,
 }

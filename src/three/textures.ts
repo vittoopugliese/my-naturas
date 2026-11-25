@@ -31,11 +31,17 @@ export function knurlTexture() {
   return knurl
 }
 
-/** Copy of the knurl texture with its own repeat, since repeat lives on the texture. */
+/** Copy of the knurl texture with its own repeat, since repeat lives on the texture. One copy per repeat. */
+const knurlCopies = new Map<string, CanvasTexture>()
 export function knurlRepeat(u: number, v: number) {
-  const t = knurlTexture().clone()
-  t.repeat.set(u, v)
-  t.needsUpdate = true
+  const key = `${u}x${v}`
+  let t = knurlCopies.get(key)
+  if (!t) {
+    t = knurlTexture().clone()
+    t.repeat.set(u, v)
+    t.needsUpdate = true
+    knurlCopies.set(key, t)
+  }
   return t
 }
 
@@ -43,7 +49,11 @@ export function knurlRepeat(u: number, v: number) {
  * Vertical fade for bottles that go from colored (top) to clear (bottom).
  * `map` carries the color; `transmissionMap` (red channel) is dark where the glass is opaque.
  */
+const gradients = new Map<string, { map: CanvasTexture; transmissionMap: CanvasTexture }>()
 export function gradientTextures(top: string, bottom: string) {
+  const key = top + bottom
+  const cached = gradients.get(key)
+  if (cached) return cached
   const h = 256
   const make = (paint: (g: CanvasRenderingContext2D) => void) => {
     const c = document.createElement('canvas')
@@ -70,7 +80,9 @@ export function gradientTextures(top: string, bottom: string) {
     g.fillRect(0, 0, 2, h)
   })
   transmissionMap.colorSpace = NoColorSpace
-  return { map, transmissionMap }
+  const out = { map, transmissionMap }
+  gradients.set(key, out)
+  return out
 }
 
 /** UVs where v follows height (0 at the base, 1 at the top). For vertical gradients. */

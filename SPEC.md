@@ -22,7 +22,7 @@ No tiene backend, login ni base de datos: es un sitio estático.
 
 **Carga:** hay un solo modo montado a la vez. Al cambiar de modo se desmonta el otro canvas y se libera su memoria de GPU. El catálogo (`src/modes/Catalog.tsx` y `data/catalogo.json`) es un chunk aparte que se baja solo al abrirlo. Dentro del catálogo solo se montan el estante en foco y sus dos vecinos (`MOUNT_RADIUS`).
 
-**Datos del catálogo:** `data/catalogo.json` lo genera `scripts/catalogo/` a partir de thescentbase.com (468 perfumes de Natura; se filtran los de hombre y los unisex). Trae año, género, familia, notas (traducidas con `notes-es.js`) y perfumistas. No trae concentración. Excluye mis perfumes, que la app agrega desde `data/perfumes.json`. Los frascos son aproximados (`bottle.estimated`): la forma sale de la línea y el año (Homem desde 2016 usa `homem-rect`, Kaiak desde 2018 `kaiak-tall`, Humor `humor-pebble`, Ekos `ekos-round` y el resto `generic-rect`, proporcionado según la foto), y el color se toma de la foto del producto. Para regenerarlo:
+**Datos del catálogo:** `data/catalogo.json` lo genera `scripts/catalogo/` a partir de thescentbase.com (468 perfumes de Natura; se filtran los de hombre y los unisex). Trae año, género, familia, notas (traducidas con `notes-es.js`) y perfumistas. No trae concentración. Excluye mis perfumes, que la app agrega desde `data/perfumes.json`. Los frascos son aproximados (`bottle.estimated`): el modelo sale de la línea (ver sección 3; las líneas sin modelo propio usan el genérico, proporcionado según la foto) y el color se toma de la foto del producto. Para regenerarlo:
 
 ```sh
 cd scripts/catalogo && npm i --no-save jpeg-js@0.4.4
@@ -39,21 +39,25 @@ Extras para v2: "qué me pongo hoy" (sugerencia por clima o ocasión), notas com
 
 ## 3. Modelos 3D
 
-**Decisión: frascos procedurales, no GLB.** Cada frasco se genera por código a partir de `bottle.shape` + colores. Las formas y proporciones salen de los close-ups de cada frasco (2026-11-21). Motivos:
+**Decisión: frascos procedurales, no GLB.** Cada frasco se genera por código a partir de su línea + colores. Las formas y proporciones salen de los close-ups de cada frasco (2026-11-21). Motivos:
 - No hay modelos 3D oficiales de Natura y modelar 12 en Blender lleva mucho tiempo.
 - Los Homem actuales comparten forma (bloque casi cuadrado, tapa cilíndrica moleteada), así que un solo generador cubre 6 frascos.
 - Más adelante, cualquier frasco se puede reemplazar por un `.glb` sin tocar el resto (campo opcional `bottle.model`).
 
-Formas (`src/three/shapes/`, una por archivo; 1 unidad = 10 cm):
+Formas (`src/three/shapes/`, una por archivo; 1 unidad = 10 cm). **El modelo sale de la línea**, no de los datos: `shapeOf(p)` en `shapes/index.tsx` es un `switch` por `p.line`. Todos los frascos de una línea son el mismo modelo y solo cambian los colores de `bottle`. El giro en el estante (`yaw`) también es por línea.
 
-| `shape` | Frascos | Geometría |
+| Línea | Archivo | Geometría |
 |---|---|---|
-| `essencial-faceted` | Essencial Exclusivo | El más grande. Bloque mate gris oscuro; el frente tiene la esquina superior izquierda y el borde izquierdo cortados en facetas (geometría propia, flat shading). Cuello plateado y tapa cuadrada mate. |
-| `coragio-frame` | Homem Cor.agio | Cuerpo negro brillante con los costados moleteados (bump map). Al frente, una placa gris con marco plateado que sobresale por arriba; arriba, un bloque transparente con el accionador escalonado naranja. |
-| `homem-rect` | Identidad, Homem, Essence, Potence, Tato, Elo | Bloque casi cuadrado con bordes redondeados. Tapa cilíndrica: banda lisa, ranura y grip moleteado. Etiqueta alineada a la izquierda (natura / HOMEM / nombre). Identidad tiene letras tornasoladas (`label: "iridescent"`). Tato y Elo pasan de color arriba a vidrio transparente abajo (`glassGradientTo`). |
-| `kaiak-tall` | Kaiak Sonar | Alto, vidrio satinado azul arriba que pasa a transparente abajo. Tapa grande azul esmerilada sobre un aro blanco con presilla. |
-| `humor-pebble` | Humor a Dois, Paz e Humor | Piedra aplanada (`LatheGeometry` escalada en z), más ancha abajo. Tapa metálica del color del frasco con un aro pastel. Etiqueta curvada. |
-| `ekos-round` | Ekos Copaíba | Redondo, vidrio marrón ahumado, hombros redondeados, collar de vidrio y válvula negra estriada. "CO / PAÍ / BA" curvado sobre el frasco. |
+| Essencial | `essencial.tsx` | El de Exclusivo para todos. Bloque con el frente izquierdo cortado en facetas (flat shading). Cuello metálico (`capAccent`) y tapa cuadrada. Exclusivo es mate; Oud Pimenta, Sentir y Floral pasan de un color a otro (`glassGradientTo`). |
+| Homem | `homem.tsx` | Bloque casi cuadrado con bordes redondeados. Tapa cilíndrica: banda lisa, ranura y grip moleteado. |
+| Homem Cor.agio (y Elixir) | `coragio.tsx` | Única excepción dentro de Homem (nombre con "Cor.agio"). Cuerpo moleteado, placa al frente que sobresale arriba, bloque transparente con el accionador. |
+| Kaiak | `kaiak.tsx` | Petaca con hombros redondeados que cierran en una tapa ancha. Aro de color con presilla a la derecha. |
+| Biografia | `biografia.tsx` | Petaca ancha y plana con las esquinas de abajo muy redondeadas. Cuello metálico y tapa redonda moleteada abajo. |
+| Humor | `humor.tsx` | Piedra aplanada (`LatheGeometry` escalada en z). |
+| Ekos | `ekos.tsx` | Redondo, collar de vidrio y válvula estriada. |
+| Otras (catálogo) | `generic.tsx` | Bloque con tapa cilíndrica, proporcionado por `bottle.aspect`. |
+
+**Rendimiento.** Cada archivo crea su geometría una sola vez, a nivel de módulo (`once` y `memoBy` en `shapes/common.ts`), y todos los frascos de la línea la comparten. Las texturas de moleteado y de gradiente también se guardan en caché (`textures.ts`). Los grupos llevan `dispose={null}` para que R3F no libere la geometría compartida al desmontar un frasco. `BottleShapeView` es `memo`: el hover y la selección no vuelven a armar el modelo. Kaiak y Biografia usan `loft()`, un cuerpo hecho con cortes horizontales de rectángulo redondeado, con UV vertical para los gradientes.
 
 Estante (`src/three/layout.ts`): cada frasco gira según `bottle.yaw` (grados; positivo muestra el costado derecho) y se apoya contra el fondo. Después se corre a la derecha solo hasta no chocar con sus vecinos (test de ejes separadores entre rectángulos rotados). Así los frascos girados quedan metidos uno detrás del otro, apilados como en el estante real.
 

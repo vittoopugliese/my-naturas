@@ -1,6 +1,6 @@
 import { MathUtils } from 'three'
 import type { Perfume } from '../types'
-import { sizeOf } from './shapes'
+import { sizeOf, yawOf } from './shapes'
 
 /** A bottle's footprint on the shelf: rectangle centered at (x, z), turned by `angle` (rotation.y). */
 type Footprint = { x: number; z: number; hw: number; hd: number; angle: number }
@@ -45,7 +45,7 @@ export function packShelf(perfumes: Perfume[]): ShelfLayout {
   const placed: Footprint[] = []
   for (const p of perfumes) {
     const { w, d } = sizeOf(p)
-    const angle = -MathUtils.degToRad(p.bottle.yaw ?? 0)
+    const angle = -MathUtils.degToRad(yawOf(p))
     const f: Footprint = { x: 0, z: 0, hw: w / 2, hd: d / 2, angle }
     f.z = BACK + radius(f, [0, 1])
     if (placed.length) {

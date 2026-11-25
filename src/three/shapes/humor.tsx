@@ -1,7 +1,7 @@
-import { useMemo } from 'react'
+import { CylinderGeometry } from 'three'
 import { CapMaterial, Glass, Label } from '../materials'
 import { latheBody } from './lathe'
-import type { ShapeDef, ShapeProps } from './common'
+import { once, type ShapeDef, type ShapeProps } from './common'
 
 // Humor: flattened pebble, widest low down, sloping shoulders into a metallic cap
 // in the bottle's color with a thin pastel ring.
@@ -24,23 +24,27 @@ const PROFILE: [number, number][] = [
   [0.1, H],
 ]
 
+const geo = once(() => ({
+  body: latheBody(PROFILE),
+  ring: new CylinderGeometry(CAP_R - 0.012, CAP_R - 0.012, 0.025, 40),
+  cap: new CylinderGeometry(CAP_R, CAP_R, CAP_H, 48),
+}))
+
 function Humor({ p, title, subtitle }: ShapeProps) {
   const { glass, cap, capAccent, label = '#ffffff' } = p.bottle
-  const body = useMemo(() => latheBody(PROFILE), [])
+  const g = geo()
   const front = R * FLAT + 0.004
   // Radius of curvature at the front of the flattened ellipse.
   const wrap = (R * R) / (R * FLAT)
   return (
-    <group>
-      <mesh geometry={body} scale={[1, 1, FLAT]}>
+    <group dispose={null}>
+      <mesh geometry={g.body} scale={[1, 1, FLAT]}>
         <Glass color={glass} />
       </mesh>
-      <mesh position={[0, H + 0.0125, 0]}>
-        <cylinderGeometry args={[CAP_R - 0.012, CAP_R - 0.012, 0.025, 40]} />
+      <mesh geometry={g.ring} position={[0, H + 0.0125, 0]}>
         <CapMaterial color={capAccent ?? '#ffffff'} roughness={0.5} />
       </mesh>
-      <mesh position={[0, H + 0.025 + CAP_H / 2, 0]}>
-        <cylinderGeometry args={[CAP_R, CAP_R, CAP_H, 48]} />
+      <mesh geometry={g.cap} position={[0, H + 0.025 + CAP_H / 2, 0]}>
         <CapMaterial color={cap} metal roughness={0.3} />
       </mesh>
       <Label position={[0, 0.8, front]} size={0.12} spacing={0.02} wrapRadius={wrap} color={label}>
@@ -56,4 +60,4 @@ function Humor({ p, title, subtitle }: ShapeProps) {
   )
 }
 
-export const humor: ShapeDef = { size: { w: R * 2, h: H + 0.025 + CAP_H, d: R * 2 * FLAT }, Component: Humor }
+export const humor: ShapeDef = { size: { w: R * 2, h: H + 0.025 + CAP_H, d: R * 2 * FLAT }, yaw: 30, Component: Humor }

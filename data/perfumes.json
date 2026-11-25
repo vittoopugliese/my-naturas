@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "updated": "2026-11-21",
-    "notes": "Notes pyramids from fragrance databases and Natura regional stores. verified=false means the notes pyramid differs between sources. Concentrations are inferred from the line and not yet checked against the boxes. bottle shapes and colors taken from the owner's close-up photos; shelfOrder = left-to-right position in that photo (1-12). bottle.label = label text color, or \"iridescent\". glassGradientTo = bottom color of bottles that fade to clear glass. yaw = degrees the bottle is turned on the shelf."
+    "updated": "2026-11-24",
+    "notes": "Notes pyramids from fragrance databases and Natura regional stores. verified=false means the notes pyramid differs between sources. Concentrations are inferred from the line and not yet checked against the boxes. bottle colors taken from the owner's close-up photos; shelfOrder = left-to-right position in that photo (1-12). bottle.label = label text color, or \"iridescent\". glassGradientTo = bottom color of bottles that fade to clear glass. The bottle model comes from the line (src/three/shapes/index.tsx, shapeOf); data only holds colors. Colors of bottles marked estimated come from product photos (Natura, Google Images)."
   },
   "perfumes": [
     {
@@ -38,14 +38,12 @@
         ]
       },
       "bottle": {
-        "shape": "essencial-faceted",
         "glass": "#3a3b3e",
         "finish": "matte",
         "cap": "#3a3b3e",
         "capAccent": "#d9dcdf",
         "label": "#d4d4d6",
-        "shelfOrder": 1,
-        "yaw": 18
+        "shelfOrder": 1
       },
       "source": "https://thescentbase.com/perfumes/natura/essencial-exclusivo",
       "verified": true
@@ -89,13 +87,11 @@
         ]
       },
       "bottle": {
-        "shape": "coragio-frame",
         "glass": "#0b0b0b",
         "cap": "#34373c",
         "capAccent": "#ff5a1a",
         "label": "#f2efe8",
-        "shelfOrder": 2,
-        "yaw": 44
+        "shelfOrder": 2
       },
       "source": "https://thescentbase.com/perfumes/natura/homem-cor-agio",
       "verified": true
@@ -145,13 +141,11 @@
         ]
       },
       "bottle": {
-        "shape": "homem-rect",
         "glass": "#0e0e10",
         "cap": "#1b1b1b",
         "capAccent": null,
         "label": "iridescent",
-        "shelfOrder": 3,
-        "yaw": 44
+        "shelfOrder": 3
       },
       "source": "https://www.naturacosmeticos.com.ar/p/natura-homem-identidad--eau-de-parfum-100-ml/NATARG-200122",
       "verified": true
@@ -185,13 +179,11 @@
         ]
       },
       "bottle": {
-        "shape": "homem-rect",
         "glass": "#cdd9df",
         "cap": "#b4b8bc",
         "capAccent": null,
         "label": "#eef2f4",
-        "shelfOrder": 4,
-        "yaw": 44
+        "shelfOrder": 4
       },
       "source": "https://thescentbase.com/perfumes/natura/homem",
       "verified": true
@@ -232,13 +224,11 @@
         ]
       },
       "bottle": {
-        "shape": "homem-rect",
         "glass": "#1b2142",
         "cap": "#b4b8bc",
         "capAccent": null,
         "label": "#d8dce0",
-        "shelfOrder": 5,
-        "yaw": 44
+        "shelfOrder": 5
       },
       "source": "https://thescentbase.com/perfumes/natura/homem-essence",
       "verified": true
@@ -268,13 +258,11 @@
         ]
       },
       "bottle": {
-        "shape": "homem-rect",
         "glass": "#a3121c",
         "cap": "#b4b8bc",
         "capAccent": null,
         "label": "#f2f2f2",
-        "shelfOrder": 6,
-        "yaw": 44
+        "shelfOrder": 6
       },
       "source": "https://www.parfumo.com/Perfumes/Natura/Homem_Potence",
       "verified": false
@@ -312,14 +300,12 @@
         ]
       },
       "bottle": {
-        "shape": "homem-rect",
         "glass": "#ee6a2a",
         "glassGradientTo": "#f7c896",
         "cap": "#1b1b1b",
         "capAccent": null,
         "label": "#151515",
-        "shelfOrder": 7,
-        "yaw": 44
+        "shelfOrder": 7
       },
       "source": "https://thescentbase.com/perfumes/natura/homem-tato",
       "verified": true
@@ -364,14 +350,12 @@
         ]
       },
       "bottle": {
-        "shape": "homem-rect",
         "glass": "#1d7884",
         "glassGradientTo": "#b4e2e6",
         "cap": "#1b1b1b",
         "capAccent": null,
         "label": "#f2f2f2",
-        "shelfOrder": 8,
-        "yaw": 44
+        "shelfOrder": 8
       },
       "source": "https://thescentbase.com/perfumes/natura/homem-elo",
       "verified": true
@@ -421,15 +405,13 @@
         ]
       },
       "bottle": {
-        "shape": "kaiak-tall",
         "glass": "#2f55a6",
         "glassGradientTo": "#dbe9f5",
         "finish": "frosted",
         "cap": "#3d72cf",
         "capAccent": "#f2f2f2",
         "label": "#ffffff",
-        "shelfOrder": 9,
-        "yaw": 22
+        "shelfOrder": 9
       },
       "source": "https://thescentbase.com/perfumes/natura/kaiak-sonar",
       "verified": false
@@ -463,13 +445,11 @@
         ]
       },
       "bottle": {
-        "shape": "humor-pebble",
         "glass": "#5c1a1c",
         "cap": "#7a1f2b",
         "capAccent": "#e8b9c4",
         "label": "#ffffff",
-        "shelfOrder": 10,
-        "yaw": 30
+        "shelfOrder": 10
       },
       "source": "https://thescentbase.com/perfumes/natura/humor-a-dois",
       "verified": true
@@ -506,13 +486,11 @@
         ]
       },
       "bottle": {
-        "shape": "humor-pebble",
         "glass": "#4d7a1f",
         "cap": "#5f7c4a",
         "capAccent": "#bfe6cf",
         "label": "#ffffff",
-        "shelfOrder": 11,
-        "yaw": 30
+        "shelfOrder": 11
       },
       "source": "https://thescentbase.com/perfumes/natura/humor-6-paz-e-humor",
       "verified": true
@@ -549,16 +527,532 @@
         ]
       },
       "bottle": {
-        "shape": "ekos-round",
         "glass": "#2b1d12",
         "cap": "#121212",
         "capAccent": null,
         "label": "#e3cfa0",
-        "shelfOrder": 12,
-        "yaw": 0
+        "shelfOrder": 12
       },
       "source": "https://guidodecants.com.br/produtos/ekos-copaiba-natura/",
       "verified": true
+    },
+    {
+      "id": "kaiak-extremo",
+      "brand": "Natura",
+      "line": "Kaiak",
+      "name": "Kaiak Extremo",
+      "concentration": "",
+      "year": 2014,
+      "perfumers": [],
+      "family": "Aromática fougère",
+      "notes": {
+        "top": [
+          "bergamota",
+          "limón",
+          "mandarina"
+        ],
+        "heart": [
+          "lirio del valle",
+          "azahar",
+          "notas amaderadas"
+        ],
+        "base": [
+          "ámbar",
+          "almizcle",
+          "musgo de roble"
+        ]
+      },
+      "bottle": {
+        "glass": "#cfd5da",
+        "cap": "#b4b8bc",
+        "capAccent": "#8d939a",
+        "label": "#3a4048",
+        "shelfOrder": 13,
+        "estimated": true
+      },
+      "source": "https://thescentbase.com/perfumes/natura/kaiak-extremo",
+      "verified": false
+    },
+    {
+      "id": "kaiak-noite",
+      "brand": "Natura",
+      "line": "Kaiak",
+      "name": "Kaiak Noite",
+      "concentration": "",
+      "year": 2020,
+      "perfumers": [
+        "Verônica Kato"
+      ],
+      "family": "Aromática",
+      "notes": {
+        "top": [
+          "pimienta negra",
+          "jengibre",
+          "menta piperita"
+        ],
+        "heart": [
+          "enebro",
+          "lavanda",
+          "olíbano"
+        ],
+        "base": [
+          "ámbar",
+          "sándalo",
+          "vetiver"
+        ]
+      },
+      "bottle": {
+        "glass": "#141a26",
+        "cap": "#1b1b1b",
+        "capAccent": "#2a2a2a",
+        "label": "#f2f2f2",
+        "shelfOrder": 14,
+        "estimated": true
+      },
+      "source": "https://thescentbase.com/perfumes/natura/kaiak-noite",
+      "verified": false
+    },
+    {
+      "id": "kaiak-pulso",
+      "brand": "Natura",
+      "line": "Kaiak",
+      "name": "Kaiak Pulso",
+      "concentration": "",
+      "year": 2010,
+      "perfumers": [],
+      "family": "Aromática",
+      "notes": {
+        "top": [
+          "bergamota",
+          "limón",
+          "lima"
+        ],
+        "heart": [
+          "cilantro",
+          "lirio del valle",
+          "rosa"
+        ],
+        "base": [
+          "cedro",
+          "maderas exóticas",
+          "almizcle"
+        ]
+      },
+      "bottle": {
+        "glass": "#1f3f9a",
+        "cap": "#2a4fae",
+        "capAccent": "#29b6e0",
+        "label": "#7fd3f0",
+        "shelfOrder": 15,
+        "estimated": true
+      },
+      "source": "https://thescentbase.com/perfumes/natura/kaiak-pulso",
+      "verified": false
+    },
+    {
+      "id": "kaiak-oceano",
+      "brand": "Natura",
+      "line": "Kaiak",
+      "name": "Kaiak Oceano",
+      "concentration": "",
+      "year": 2020,
+      "perfumers": [
+        "Alienor Massenet",
+        "Verônica Kato"
+      ],
+      "family": "Aromática acuática",
+      "notes": {
+        "top": [
+          "pataqueira",
+          "algas",
+          "notas acuáticas"
+        ],
+        "heart": [
+          "notas aromáticas",
+          "sal marina"
+        ],
+        "base": [
+          "ámbar gris",
+          "amyris",
+          "cedro",
+          "musgo",
+          "pachulí",
+          "haba tonka"
+        ]
+      },
+      "bottle": {
+        "glass": "#16223a",
+        "glassGradientTo": "#4aa6d6",
+        "cap": "#2a3446",
+        "capAccent": "#c0c4c8",
+        "label": "#5fc4ea",
+        "shelfOrder": 16,
+        "estimated": true
+      },
+      "source": "https://thescentbase.com/perfumes/natura/kaiak-oceano",
+      "verified": false
+    },
+    {
+      "id": "essencial-oud-pimenta",
+      "brand": "Natura",
+      "line": "Essencial",
+      "name": "Essencial Oud Pimenta",
+      "concentration": "",
+      "year": 2021,
+      "perfumers": [
+        "Rodrigo Flores-Roux",
+        "John Gamba",
+        "Verônica Kato"
+      ],
+      "family": "Amaderada",
+      "notes": {
+        "top": [
+          "bergamota",
+          "pimienta negra",
+          "ishpink",
+          "limón",
+          "pimienta",
+          "priprioca",
+          "azafrán"
+        ],
+        "heart": [
+          "manzana",
+          "arándano",
+          "salvia esclarea",
+          "cilantro",
+          "geranio",
+          "frambuesa",
+          "rosa"
+        ],
+        "base": [
+          "oud",
+          "ámbar",
+          "breu-branco",
+          "cypriol",
+          "bálsamo de gurjun",
+          "cuero",
+          "almizcle",
+          "pachulí",
+          "bálsamo del perú",
+          "sándalo",
+          "vetiver"
+        ]
+      },
+      "bottle": {
+        "glass": "#1c2a4a",
+        "glassGradientTo": "#c98f86",
+        "cap": "#111111",
+        "capAccent": "#c9a45a",
+        "label": "#e8e2d8",
+        "shelfOrder": 17,
+        "estimated": true
+      },
+      "source": "https://thescentbase.com/perfumes/natura/essencial-oud-pimenta",
+      "verified": false
+    },
+    {
+      "id": "biografia-assinatura",
+      "brand": "Natura",
+      "line": "Biografia",
+      "name": "Biografia Assinatura",
+      "concentration": "",
+      "year": 2019,
+      "perfumers": [
+        "Verônica Kato"
+      ],
+      "family": "Amaderada aromática",
+      "notes": {
+        "top": [
+          "pimienta negra",
+          "mandarina",
+          "pimienta rosa",
+          "violeta"
+        ],
+        "heart": [
+          "lavanda",
+          "cuero",
+          "romero",
+          "salvia"
+        ],
+        "base": [
+          "breu-branco",
+          "cashmeran",
+          "musgo de roble",
+          "palo santo",
+          "haba tonka",
+          "vetiver"
+        ]
+      },
+      "bottle": {
+        "glass": "#8a4a1c",
+        "cap": "#2a2420",
+        "capAccent": "#b08a5a",
+        "label": "#f2e6d6",
+        "shelfOrder": 18,
+        "estimated": true
+      },
+      "source": "https://thescentbase.com/perfumes/natura/biografia-assinatura",
+      "verified": false
+    },
+    {
+      "id": "homem-coragio-elixir",
+      "brand": "Natura",
+      "line": "Homem",
+      "name": "Homem Cor.agio Elixir",
+      "concentration": "",
+      "year": null,
+      "perfumers": [],
+      "family": "",
+      "notes": {
+        "top": [],
+        "heart": [],
+        "base": []
+      },
+      "bottle": {
+        "glass": "#4a423c",
+        "cap": "#121212",
+        "capAccent": "#c9a45a",
+        "label": "#c9a45a",
+        "shelfOrder": 19,
+        "estimated": true
+      },
+      "source": "",
+      "verified": false
+    },
+    {
+      "id": "kaiak-21k",
+      "brand": "Natura",
+      "line": "Kaiak",
+      "name": "Kaiak 21K",
+      "concentration": "Deo Colônia",
+      "year": 2026,
+      "perfumers": [
+        "Verônica Kato",
+        "Christophe Renault",
+        "Antoine Maisondieu"
+      ],
+      "family": "Aromática ambarada",
+      "notes": {
+        "top": [
+          "notas acuáticas",
+          "jengibre"
+        ],
+        "heart": [],
+        "base": [
+          "ámbar",
+          "breu-branco"
+        ]
+      },
+      "bottle": {
+        "glass": "#2c4f7c",
+        "finish": "matte",
+        "cap": "#2c4f7c",
+        "capAccent": "#d4e62a",
+        "label": "#d4e62a",
+        "shelfOrder": 20,
+        "estimated": true
+      },
+      "source": "https://diariodopara.com.br/noticias/natura-lanca-kaiak-21k-com-fresh-amplify-tecnologia-inedita-na-perfumaria/",
+      "verified": false
+    },
+    {
+      "id": "kaiak-eau-de-parfum",
+      "brand": "Natura",
+      "line": "Kaiak",
+      "name": "Kaiak Eau de Parfum",
+      "concentration": "Eau de Parfum",
+      "year": null,
+      "perfumers": [],
+      "family": "",
+      "notes": {
+        "top": [],
+        "heart": [],
+        "base": []
+      },
+      "bottle": {
+        "glass": "#1b2a44",
+        "glassGradientTo": "#3f7fd0",
+        "cap": "#2b2f36",
+        "capAccent": "#2b2f36",
+        "label": "#e8eef5",
+        "shelfOrder": 21,
+        "estimated": true
+      },
+      "source": "",
+      "verified": false
+    },
+    {
+      "id": "biografia",
+      "brand": "Natura",
+      "line": "Biografia",
+      "name": "Biografia (clásico)",
+      "concentration": "",
+      "year": 1994,
+      "perfumers": [],
+      "family": "Aromática fougère",
+      "notes": {
+        "top": [],
+        "heart": [],
+        "base": []
+      },
+      "bottle": {
+        "glass": "#1c7fd0",
+        "cap": "#c4c8cc",
+        "capAccent": "#c4c8cc",
+        "label": "#f2f2f2",
+        "shelfOrder": 22,
+        "estimated": true
+      },
+      "source": "https://nottier.com/perfumes/natura/biografia",
+      "verified": false
+    },
+    {
+      "id": "essencial-sentir",
+      "brand": "Natura",
+      "line": "Essencial",
+      "name": "Essencial Sentir",
+      "concentration": "Eau de Parfum",
+      "year": 2024,
+      "perfumers": [
+        "Verônica Kato"
+      ],
+      "family": "Aromática amaderada",
+      "notes": {
+        "top": [
+          "bergamota",
+          "pimienta"
+        ],
+        "heart": [
+          "lavanda"
+        ],
+        "base": [
+          "sándalo",
+          "pachulí"
+        ]
+      },
+      "bottle": {
+        "glass": "#2f7f6c",
+        "glassGradientTo": "#cfe9e0",
+        "cap": "#141414",
+        "capAccent": "#c9a45a",
+        "label": "#e8f2ee",
+        "shelfOrder": 23,
+        "estimated": true
+      },
+      "source": "https://scentverdict.com/perfume/natura-essencial-sentir-masculino-eau-de-parfum",
+      "verified": false
+    },
+    {
+      "id": "essencial-atrai",
+      "brand": "Natura",
+      "line": "Essencial",
+      "name": "Essencial Atrai",
+      "concentration": "",
+      "year": 2025,
+      "perfumers": [
+        "Verônica Kato"
+      ],
+      "family": "Floral",
+      "notes": {
+        "top": [
+          "manzana",
+          "bergamota",
+          "cassis",
+          "pomelo",
+          "mandarina",
+          "pera",
+          "ananá",
+          "pimienta rosa",
+          "frambuesa"
+        ],
+        "heart": [
+          "jazmín",
+          "lirio del valle",
+          "rosa",
+          "violeta"
+        ],
+        "base": [
+          "ámbar",
+          "benjuí",
+          "cedro",
+          "chocolate",
+          "dulce de leche",
+          "láudano",
+          "musgo",
+          "almizcle",
+          "pachulí",
+          "praliné",
+          "sándalo",
+          "vainilla"
+        ]
+      },
+      "bottle": {
+        "glass": "#5e1a36",
+        "cap": "#141414",
+        "capAccent": "#c0c4c8",
+        "label": "#e8d8de",
+        "shelfOrder": 24,
+        "estimated": true
+      },
+      "source": "https://thescentbase.com/perfumes/natura/essencial-atrai",
+      "verified": false
+    },
+    {
+      "id": "essencial-exclusivo-floral",
+      "brand": "Natura",
+      "line": "Essencial",
+      "name": "Essencial Exclusivo Floral",
+      "concentration": "",
+      "year": 2013,
+      "perfumers": [
+        "Marion Costero",
+        "Verônica Kato"
+      ],
+      "family": "Floral",
+      "notes": {
+        "top": [
+          "manzana",
+          "cítricos",
+          "notas verdes",
+          "mandarina"
+        ],
+        "heart": [
+          "carnation",
+          "egyptian jasmine",
+          "fresia",
+          "gardenia",
+          "jengibre",
+          "jacinto",
+          "jazmín",
+          "lily",
+          "lirio del valle",
+          "notas oleosas",
+          "durazno",
+          "rosa",
+          "tuberose",
+          "violeta",
+          "ylang-ylang"
+        ],
+        "base": [
+          "ámbar",
+          "caramelo",
+          "cedro",
+          "iso e super",
+          "almizcle",
+          "sándalo"
+        ]
+      },
+      "bottle": {
+        "glass": "#d9a93a",
+        "glassGradientTo": "#f4f1ea",
+        "cap": "#f2f2f2",
+        "capAccent": "#c9a45a",
+        "label": "#8a6a2a",
+        "shelfOrder": 25,
+        "estimated": true
+      },
+      "source": "https://thescentbase.com/perfumes/natura/essencial-exclusivo-floral",
+      "verified": false
     }
   ]
 }
