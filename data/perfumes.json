@@ -1,0 +1,564 @@
+{
+  "_meta": {
+    "updated": "2026-11-21",
+    "notes": "Notes pyramids from fragrance databases and Natura regional stores. verified=false means the notes pyramid differs between sources. Concentrations are inferred from the line and not yet checked against the boxes. bottle shapes and colors taken from the owner's close-up photos; shelfOrder = left-to-right position in that photo (1-12). bottle.label = label text color, or \"iridescent\". glassGradientTo = bottom color of bottles that fade to clear glass. yaw = degrees the bottle is turned on the shelf."
+  },
+  "perfumes": [
+    {
+      "id": "essencial-exclusivo",
+      "brand": "Natura",
+      "line": "Essencial",
+      "name": "Essencial Exclusivo",
+      "concentration": "Deo Parfum",
+      "year": 2010,
+      "perfumers": [
+        "Marion Costero",
+        "Verônica Kato"
+      ],
+      "family": "Amaderada aromática especiada",
+      "notes": {
+        "top": [
+          "albahaca",
+          "cardamomo",
+          "coñac",
+          "jengibre",
+          "manzana verde"
+        ],
+        "heart": [
+          "artemisa",
+          "geranio",
+          "lavanda",
+          "pimienta rosa"
+        ],
+        "base": [
+          "cedro",
+          "musgo",
+          "almizcle",
+          "pachulí"
+        ]
+      },
+      "bottle": {
+        "shape": "essencial-faceted",
+        "glass": "#3a3b3e",
+        "finish": "matte",
+        "cap": "#3a3b3e",
+        "capAccent": "#d9dcdf",
+        "label": "#d4d4d6",
+        "shelfOrder": 1,
+        "yaw": 18
+      },
+      "source": "https://thescentbase.com/perfumes/natura/essencial-exclusivo",
+      "verified": true
+    },
+    {
+      "id": "homem-coragio",
+      "brand": "Natura",
+      "line": "Homem",
+      "name": "Homem Cor.agio",
+      "concentration": "Deo Parfum",
+      "year": 2018,
+      "perfumers": [
+        "Jean-Christophe Hérault",
+        "Verônica Kato"
+      ],
+      "family": "Especiada fresca / ambarada",
+      "notes": {
+        "top": [
+          "manzana",
+          "bergamota",
+          "pimienta negra",
+          "canela",
+          "pomelo",
+          "menta",
+          "nuez moscada",
+          "pimienta rosa"
+        ],
+        "heart": [
+          "angélica",
+          "lavanda",
+          "cuero",
+          "lirio del valle",
+          "rosa"
+        ],
+        "base": [
+          "ámbar",
+          "cedro",
+          "bálsamo de copaíba",
+          "cumarina",
+          "láudano"
+        ]
+      },
+      "bottle": {
+        "shape": "coragio-frame",
+        "glass": "#0b0b0b",
+        "cap": "#34373c",
+        "capAccent": "#ff5a1a",
+        "label": "#f2efe8",
+        "shelfOrder": 2,
+        "yaw": 44
+      },
+      "source": "https://thescentbase.com/perfumes/natura/homem-cor-agio",
+      "verified": true
+    },
+    {
+      "id": "homem-identidad",
+      "brand": "Natura",
+      "line": "Homem",
+      "name": "Homem Identidad",
+      "concentration": "Eau de Parfum",
+      "year": 2025,
+      "perfumers": [],
+      "family": "Amaderada frutal",
+      "notes": {
+        "top": [
+          "bergamota",
+          "pimienta negra",
+          "frambuesa",
+          "cereza negra",
+          "mora",
+          "pomelo",
+          "lavanda",
+          "cardamomo",
+          "tomillo",
+          "pera"
+        ],
+        "heart": [
+          "violeta",
+          "lavanda",
+          "salvia",
+          "ciruela",
+          "lirio del valle",
+          "azahar",
+          "elemí"
+        ],
+        "base": [
+          "cedro",
+          "ámbar",
+          "sándalo",
+          "vetiver",
+          "cuero",
+          "pachulí",
+          "benjuí",
+          "haba tonka",
+          "palo santo",
+          "copaíba"
+        ]
+      },
+      "bottle": {
+        "shape": "homem-rect",
+        "glass": "#0e0e10",
+        "cap": "#1b1b1b",
+        "capAccent": null,
+        "label": "iridescent",
+        "shelfOrder": 3,
+        "yaw": 44
+      },
+      "source": "https://www.naturacosmeticos.com.ar/p/natura-homem-identidad--eau-de-parfum-100-ml/NATARG-200122",
+      "verified": true
+    },
+    {
+      "id": "homem",
+      "brand": "Natura",
+      "line": "Homem",
+      "name": "Homem (original)",
+      "concentration": "Deo Colônia",
+      "year": 1997,
+      "perfumers": [
+        "Francisco Marano"
+      ],
+      "family": "Especiada fresca frutal",
+      "notes": {
+        "top": [
+          "bergamota",
+          "jengibre",
+          "nuez moscada"
+        ],
+        "heart": [
+          "manzana",
+          "durazno",
+          "pera"
+        ],
+        "base": [
+          "cedro",
+          "almizcle",
+          "sándalo"
+        ]
+      },
+      "bottle": {
+        "shape": "homem-rect",
+        "glass": "#cdd9df",
+        "cap": "#b4b8bc",
+        "capAccent": null,
+        "label": "#eef2f4",
+        "shelfOrder": 4,
+        "yaw": 44
+      },
+      "source": "https://thescentbase.com/perfumes/natura/homem",
+      "verified": true
+    },
+    {
+      "id": "homem-essence",
+      "brand": "Natura",
+      "line": "Homem",
+      "name": "Homem Essence",
+      "concentration": "Deo Parfum",
+      "year": 2016,
+      "perfumers": [
+        "Clement Gavarry",
+        "Verônica Kato"
+      ],
+      "family": "Amaderada intensa",
+      "notes": {
+        "top": [
+          "bergamota",
+          "jengibre",
+          "pomelo",
+          "limón"
+        ],
+        "heart": [
+          "pimienta negra",
+          "cardamomo",
+          "canela",
+          "cilantro",
+          "violeta"
+        ],
+        "base": [
+          "ámbar",
+          "cashmeran",
+          "cedro",
+          "guayaco",
+          "iso e super",
+          "pachulí"
+        ]
+      },
+      "bottle": {
+        "shape": "homem-rect",
+        "glass": "#1b2142",
+        "cap": "#b4b8bc",
+        "capAccent": null,
+        "label": "#d8dce0",
+        "shelfOrder": 5,
+        "yaw": 44
+      },
+      "source": "https://thescentbase.com/perfumes/natura/homem-essence",
+      "verified": true
+    },
+    {
+      "id": "homem-potence",
+      "brand": "Natura",
+      "line": "Homem",
+      "name": "Homem Potence",
+      "concentration": "Eau de Parfum",
+      "year": 2018,
+      "perfumers": [],
+      "family": "Amaderada especiada",
+      "notes": {
+        "top": [
+          "mandarina verde",
+          "salvia"
+        ],
+        "heart": [
+          "pimienta negra",
+          "nuez moscada"
+        ],
+        "base": [
+          "cedro",
+          "sándalo",
+          "cumarú"
+        ]
+      },
+      "bottle": {
+        "shape": "homem-rect",
+        "glass": "#a3121c",
+        "cap": "#b4b8bc",
+        "capAccent": null,
+        "label": "#f2f2f2",
+        "shelfOrder": 6,
+        "yaw": 44
+      },
+      "source": "https://www.parfumo.com/Perfumes/Natura/Homem_Potence",
+      "verified": false
+    },
+    {
+      "id": "homem-tato",
+      "brand": "Natura",
+      "line": "Homem",
+      "name": "Homem Tato",
+      "concentration": "Deo Parfum",
+      "year": 2021,
+      "perfumers": [
+        "Jean-Christophe Hérault",
+        "Verônica Kato"
+      ],
+      "family": "Amaderada especiada / cuero",
+      "notes": {
+        "top": [
+          "pimienta negra",
+          "cardamomo",
+          "pataqueira",
+          "azafrán"
+        ],
+        "heart": [
+          "iris",
+          "sándalo",
+          "cashmeran",
+          "pachulí"
+        ],
+        "base": [
+          "cumarú",
+          "ámbar",
+          "almizcle",
+          "cuero"
+        ]
+      },
+      "bottle": {
+        "shape": "homem-rect",
+        "glass": "#ee6a2a",
+        "glassGradientTo": "#f7c896",
+        "cap": "#1b1b1b",
+        "capAccent": null,
+        "label": "#151515",
+        "shelfOrder": 7,
+        "yaw": 44
+      },
+      "source": "https://thescentbase.com/perfumes/natura/homem-tato",
+      "verified": true
+    },
+    {
+      "id": "homem-elo",
+      "brand": "Natura",
+      "line": "Homem",
+      "name": "Homem Elo",
+      "concentration": "Deo Parfum",
+      "year": 2023,
+      "perfumers": [
+        "Verônica Kato"
+      ],
+      "family": "Aromática amaderada (lavanda)",
+      "notes": {
+        "top": [
+          "lavanda blanca",
+          "estoraque",
+          "bergamota",
+          "pimienta negra",
+          "cardamomo",
+          "salvia esclarea",
+          "pomelo",
+          "pimienta rosa"
+        ],
+        "heart": [
+          "cedro",
+          "ciprés",
+          "cypriol",
+          "pachulí",
+          "sándalo",
+          "vetiver"
+        ],
+        "base": [
+          "ámbar",
+          "benjuí",
+          "musgo",
+          "almizcle",
+          "praliné",
+          "haba tonka"
+        ]
+      },
+      "bottle": {
+        "shape": "homem-rect",
+        "glass": "#1d7884",
+        "glassGradientTo": "#b4e2e6",
+        "cap": "#1b1b1b",
+        "capAccent": null,
+        "label": "#f2f2f2",
+        "shelfOrder": 8,
+        "yaw": 44
+      },
+      "source": "https://thescentbase.com/perfumes/natura/homem-elo",
+      "verified": true
+    },
+    {
+      "id": "kaiak-sonar",
+      "brand": "Natura",
+      "line": "Kaiak",
+      "name": "Kaiak Sonar",
+      "concentration": "Deo Colônia",
+      "year": 2024,
+      "perfumers": [
+        "Adriana Medina-Baez",
+        "Verônica Kato"
+      ],
+      "family": "Aromática marina amaderada",
+      "notes": {
+        "top": [
+          "limón",
+          "manzana",
+          "calone",
+          "sal marina",
+          "algas",
+          "lavanda",
+          "romero",
+          "enebro",
+          "cardamomo"
+        ],
+        "heart": [
+          "ciclamen",
+          "ciprés",
+          "geranio",
+          "lirio del valle",
+          "notas metálicas",
+          "violeta"
+        ],
+        "base": [
+          "ámbar",
+          "cedro del atlas",
+          "breu-branco",
+          "incienso",
+          "musgo",
+          "almizcle",
+          "pachulí",
+          "sándalo",
+          "vetiver"
+        ]
+      },
+      "bottle": {
+        "shape": "kaiak-tall",
+        "glass": "#2f55a6",
+        "glassGradientTo": "#dbe9f5",
+        "finish": "frosted",
+        "cap": "#3d72cf",
+        "capAccent": "#f2f2f2",
+        "label": "#ffffff",
+        "shelfOrder": 9,
+        "yaw": 22
+      },
+      "source": "https://thescentbase.com/perfumes/natura/kaiak-sonar",
+      "verified": false
+    },
+    {
+      "id": "humor-a-dois",
+      "brand": "Natura",
+      "line": "Humor",
+      "name": "Humor a Dois",
+      "concentration": "Deo Colônia",
+      "year": 2018,
+      "perfumers": [
+        "Verônica Kato"
+      ],
+      "family": "Especiada fresca aldehídica",
+      "notes": {
+        "top": [
+          "aldehídos",
+          "bergamota",
+          "pimienta negra"
+        ],
+        "heart": [
+          "geranio",
+          "jazmín",
+          "violeta"
+        ],
+        "base": [
+          "ámbar",
+          "almizcle",
+          "vetiver"
+        ]
+      },
+      "bottle": {
+        "shape": "humor-pebble",
+        "glass": "#5c1a1c",
+        "cap": "#7a1f2b",
+        "capAccent": "#e8b9c4",
+        "label": "#ffffff",
+        "shelfOrder": 10,
+        "yaw": 30
+      },
+      "source": "https://thescentbase.com/perfumes/natura/humor-a-dois",
+      "verified": true
+    },
+    {
+      "id": "humor-e-paz",
+      "brand": "Natura",
+      "line": "Humor",
+      "name": "Paz e Humor",
+      "concentration": "Deo Colônia",
+      "year": 2010,
+      "perfumers": [
+        "Marion Costero",
+        "Verônica Kato"
+      ],
+      "family": "Cítrica aromática",
+      "notes": {
+        "top": [
+          "bergamota",
+          "mandarina",
+          "naranja",
+          "azahar"
+        ],
+        "heart": [
+          "geranio",
+          "jazmín",
+          "lavanda"
+        ],
+        "base": [
+          "ámbar",
+          "cedro",
+          "almizcle",
+          "sándalo"
+        ]
+      },
+      "bottle": {
+        "shape": "humor-pebble",
+        "glass": "#4d7a1f",
+        "cap": "#5f7c4a",
+        "capAccent": "#bfe6cf",
+        "label": "#ffffff",
+        "shelfOrder": 11,
+        "yaw": 30
+      },
+      "source": "https://thescentbase.com/perfumes/natura/humor-6-paz-e-humor",
+      "verified": true
+    },
+    {
+      "id": "ekos-copaiba",
+      "brand": "Natura",
+      "line": "Ekos",
+      "name": "Ekos Copaíba",
+      "concentration": "Deo Colônia",
+      "year": 2015,
+      "perfumers": [
+        "Verônica Kato"
+      ],
+      "family": "Amaderada aromática",
+      "notes": {
+        "top": [
+          "bergamota",
+          "clementina",
+          "pomelo",
+          "limón"
+        ],
+        "heart": [
+          "elemí",
+          "acorde especiado",
+          "cedro",
+          "vetiver"
+        ],
+        "base": [
+          "copaíba",
+          "sándalo",
+          "láudano",
+          "cuero"
+        ]
+      },
+      "bottle": {
+        "shape": "ekos-round",
+        "glass": "#2b1d12",
+        "cap": "#121212",
+        "capAccent": null,
+        "label": "#e3cfa0",
+        "shelfOrder": 12,
+        "yaw": 0
+      },
+      "source": "https://guidodecants.com.br/produtos/ekos-copaiba-natura/",
+      "verified": true
+    }
+  ]
+}
